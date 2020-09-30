@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProveedoresController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,11 +20,12 @@ Route::get('/', function () {
 });
 
 // mis vistas personales
-// vista para el panel administrativo
-Route::get('/admin', function(){
-    return "Panel Administrativo";
-});
-//vista para clientes
-Route::get('/clientes',function(){
-    return "Clientes";
-});
+// vista llamando controlador para panel administrativo
+Route::get('/admin', AdminController::class);
+//llamdando controlador para proveedores
+Route::get('/proveedores',[ProveedoresController::class,'index']);
+//llamando controlador para crear proveedor
+Route::get('/proveedores/create', [ProveedoresController::class,'create']);
+
+//llamando controlador para proveedor especifico
+Route::get('/proveedores/{proveedor}',[ProveedoresController::class,'show']);
