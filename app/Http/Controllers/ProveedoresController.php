@@ -8,15 +8,16 @@ class ProveedoresController extends Controller
 {
     //pagina principal de los proveedores
     public function index(){
-        return "proveedores admin";
+        return view('proveedores.index');
     }
     //creando proveedores
     public function create(){
         //aqui tenemos que mostrar la vista del formulario
-        return "proveedores create";
+        return view('proveedores.create');
     }
     //mostrando un proveedor en particular
     public function show($proveedor){
-        return "proveedores: $proveedor ";
+        
+        return view('proveedores.show', compact('proveedor'));
     }
 }
