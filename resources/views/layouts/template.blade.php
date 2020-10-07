@@ -422,12 +422,12 @@
 							<div class="collapse" id="sidebarLayouts">
 								<ul class="nav nav-collapse">
 									<li>
-										<a href="./proveedores">
+										<a href="/proveedores">
 											<span class="sub-item">Ver lista</span>
 										</a>
 									</li>
 									<li>
-										<a href="./proveedores/create">
+										<a href="/proveedores/create">
 											<span class="sub-item">Agregar</span>
 										</a>
 									</li>
@@ -458,8 +458,8 @@
 							<div class="collapse" id="forms">
 								<ul class="nav nav-collapse">
 									<li>
-										<a href="forms/forms.html">
-											<span class="sub-item">Agregar</span>
+										<a href="/catalogo">
+											<span class="sub-item">Catalogo</span>
 										</a>
 									</li>
 									<li>

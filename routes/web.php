@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProveedoresController;
+use App\Http\Controllers\CatalogoCuentaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,20 @@ Route::get('/proveedores/create', [ProveedoresController::class,'create']);
 
 //llamando controlador para proveedor especifico
 Route::get('/proveedores/{proveedor}',[ProveedoresController::class,'show']);
+
+//llamando controlador para catalogo - creando rutas
+Route::get('/catalogo',[CatalogoCuentaController::class,'index']);
+//catalogo - activos
+Route::get('/catalogo/activos',[CatalogoCuentaController::class,'activos']);
+Route::get('/catalogo/ac',[CatalogoCuentaController::class,'ac']);
+Route::get('/catalogo/aceb',[CatalogoCuentaController::class,'aceb']);
+Route::get('/catalogo/accg',[CatalogoCuentaController::class,'accg']);
+Route::get('/catalogo/acb',[CatalogoCuentaController::class,'acb']);
+Route::get('/catalogo/accc',[CatalogoCuentaController::class,'accc']);
+Route::get('/catalogo/aci',[CatalogoCuentaController::class,'aci']);
+
+
+Route::get('/catalogo/af',[CatalogoCuentaController::class,'af']);
+Route::get('/catalogo/ad',[CatalogoCuentaController::class,'ad']);
+//catalogo - pasivos
+Route::get('/catalogo/pasivos',[CatalogoCuentaController::class,'pasivos']);

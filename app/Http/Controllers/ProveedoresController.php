@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Http;
 
 class ProveedoresController extends Controller
 {
     //pagina principal de los proveedores
     public function index(){
-        return view('proveedores.index');
+        $respuesta = Http::get('http://localhost/api-labopaes/proveedores');
+        $listado = $respuesta->json();        
+        return view('proveedores.index',compact('listado'));
     }
     //creando proveedores
     public function create(){
