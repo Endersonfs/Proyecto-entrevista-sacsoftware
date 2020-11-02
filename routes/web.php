@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProveedoresController;
 use App\Http\Controllers\CatalogoCuentaController;
+use App\Http\Controllers\AsientoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,5 +66,5 @@ Route::get('/catalogo/cc',[CatalogoCuentaController::class,'cc']);
 Route::get('/catalogo/ce',[CatalogoCuentaController::class,'ce']);
 
 //asiento -
-Route::get('/asiento/form',[AsientoController::class,'form']);
+Route::get('/asientos/formulario',[AsientoController::class,'formulario']);
 

@@ -19,8 +19,7 @@ class ProveedoresController extends Controller
         return view('proveedores.create');
     }
     //mostrando un proveedor en particular
-    public function show($proveedor){
-        
+    public function show($proveedor){        
         return view('proveedores.show', compact('proveedor'));
     }
 }
