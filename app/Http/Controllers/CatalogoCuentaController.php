@@ -41,16 +41,64 @@ class CatalogoCuentaController extends Controller
         //metodo para Caja General
         return view('catalogo.accg');
     }
-    public function acb(){
+    public function Acb(){
         //metodo para Banco
         return view('catalogo.acb');
     }
-    public function accc(){
+    public function Accc(){
         //metodo para Banco
         return view('catalogo.accc');
     }
-    public function aci(){
+    public function Aci(){
         //metodo para Banco
         return view('catalogo.aci');
+    }
+    public function Adg(){
+        // metodo para GASTOS PAGADOS POR ADELANTADOS
+        return view('catalogo.adg');
+    }
+    public function Adgs(){
+        // metodo para GASTOS PAGADOS POR ADELANTADOS
+        return view('catalogo.adgs');
+    }
+    public function Adgc(){
+        // metodo para GASTOS PAGADOS POR ADELANTADOS
+        return view('catalogo.adgc');
+    }
+    public function Adgd(){
+        // metodo para GASTOS PAGADOS POR ADELANTADOS
+        return view('catalogo.adgd');
+    }
+    public function pc(){
+        //metodo para PASIVOS CIRCULANTES
+        return view('catalogo.pc');
+    }
+    public function pcpc(){
+        //metodo para PASIVOS A CORTO PLAZO
+        return view('catalogo.pcpc');
+    }
+    public function pcpcd(){
+        //metodo para DOCUMENTOS Y CUENTAS POR PAGAR
+        return view('catalogo.pcpcd');
+    }
+    public function pcpcdd(){
+        //metodo para DOCUMENTOS Y CUENTAS POR PAGAR
+        return view('catalogo.pcpcdd');
+    }
+    public function pcpcdr(){
+        //metodo para RETENCION DE NOMINAS
+        return view('catalogo.pcpcdr');
+    }
+    public function Capital(){
+        //metodo para RETENCION DE NOMINAS
+        return view('catalogo.capital');
+    }
+    public function cc(){
+        //metodo para RETENCION DE NOMINAS
+        return view('catalogo.cc');
+    }
+    public function ce(){
+        //metodo para RETENCION DE NOMINAS
+        return view('catalogo.ce');
     }
 }

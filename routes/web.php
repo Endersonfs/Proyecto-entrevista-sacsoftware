@@ -42,8 +42,25 @@ Route::get('/catalogo/acb',[CatalogoCuentaController::class,'acb']);
 Route::get('/catalogo/accc',[CatalogoCuentaController::class,'accc']);
 Route::get('/catalogo/aci',[CatalogoCuentaController::class,'aci']);
 
+Route::get('/catalogo/adg',[CatalogoCuentaController::class,'adg']);
+Route::get('/catalogo/adgs',[CatalogoCuentaController::class,'adgs']);
+Route::get('/catalogo/adgc',[CatalogoCuentaController::class,'adgc']);
+Route::get('/catalogo/adgd',[CatalogoCuentaController::class,'adgd']);
+
 
 Route::get('/catalogo/af',[CatalogoCuentaController::class,'af']);
 Route::get('/catalogo/ad',[CatalogoCuentaController::class,'ad']);
+
 //catalogo - pasivos
 Route::get('/catalogo/pasivos',[CatalogoCuentaController::class,'pasivos']);
+Route::get('/catalogo/pc',[CatalogoCuentaController::class,'pc']);
+Route::get('/catalogo/pcpc',[CatalogoCuentaController::class,'pcpc']);
+Route::get('/catalogo/pcpcd',[CatalogoCuentaController::class,'pcpcd']);
+Route::get('/catalogo/pcpcdd',[CatalogoCuentaController::class,'pcpcdd']);
+Route::get('/catalogo/pcpcdr',[CatalogoCuentaController::class,'pcpcdr']);
+
+//catalogo - catipal
+Route::get('/catalogo/capital',[CatalogoCuentaController::class,'capital']);
+Route::get('/catalogo/cc',[CatalogoCuentaController::class,'cc']);
+Route::get('/catalogo/ce',[CatalogoCuentaController::class,'ce']);
+

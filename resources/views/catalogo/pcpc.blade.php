@@ -27,20 +27,19 @@
                 <div class="col-md-4">
                     <div class="card card-info card-annoucement card-round">
                         <div class="card-body text-center">
-                            <div class="card-opening">Pasivos cirlulantes</div>
+                            <div class="card-opening">Pasivos a corto plazo</div>
                             <div class="card-desc">
                                 Congrats and best wishes for success in your brand new life!
                                 I knew that you would do this!
                             </div>
-                            <a href="./pc">
+                            <a href="./pcpcd">
                             <div class="card-detail">
                                 <div class="btn btn-light btn-rounded">Mostrar</div>
                             </div>
                             </a>
                         </div>
                     </div>
-                </div>
-                
+                </div>               
                 
             </div>
         </div>
