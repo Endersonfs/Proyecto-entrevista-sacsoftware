@@ -476,21 +476,21 @@
 							</div>
 						</li>
 						<li class="nav-item">
-							<a data-toggle="collapse" href="#forms">
+							<a data-toggle="collapse" href="#asiento">
 								<i class="fas fa-pen-square"></i>
 								<p>Asiento</p>
 								<span class="caret"></span>
 							</a>
-							<div class="collapse" id="forms">
+							<div class="collapse" id="asiento">
 								<ul class="nav nav-collapse">
 									<li>
-										<a href="/catalogo">
+										<a href="/asientos/formulario">
 											<span class="sub-item">Crear</span>
 										</a>
 									</li>
 									<li>
-										<a href="forms/forms.html">
-											<span class="sub-item">Lista</span>
+										<a href="/asientos/lista">
+											<span class="sub-item">Ver Lista</span>
 										</a>
 									</li>
 								</ul>

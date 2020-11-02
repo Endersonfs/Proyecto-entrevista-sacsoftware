@@ -23,4 +23,9 @@ class AsientoController extends Controller
         
         return view('asientos.formulario',compact(['catalogocuenta','provedores','tiporegistro']));
     }
+    public function lista(){
+        $respListaAsiento = Http::get('http://localhost/api-labopaes/listaasiento');
+        $listaasiento = $respListaAsiento->json();
+        return view('asientos.lista', compact(['listaasiento']));
+    }
 }

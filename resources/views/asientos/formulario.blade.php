@@ -60,7 +60,7 @@
                             </div>
                             <div class="col-md-6 col-lg-6">				
                                 <div class="form-group">
-                                    <label for="email2">Proveedor / RNC</label>
+                                    <label for="email2">Proveedor</label>
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon1">@</span>

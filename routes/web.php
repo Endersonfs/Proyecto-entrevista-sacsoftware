@@ -67,4 +67,5 @@ Route::get('/catalogo/ce',[CatalogoCuentaController::class,'ce']);
 
 //asiento -
 Route::get('/asientos/formulario',[AsientoController::class,'formulario']);
+Route::get('/asientos/lista',[AsientoController::class,'lista']);
 
