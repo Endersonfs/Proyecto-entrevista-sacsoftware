@@ -64,3 +64,6 @@ Route::get('/catalogo/capital',[CatalogoCuentaController::class,'capital']);
 Route::get('/catalogo/cc',[CatalogoCuentaController::class,'cc']);
 Route::get('/catalogo/ce',[CatalogoCuentaController::class,'ce']);
 
+//asiento -
+Route::get('/asiento/form',[AsientoController::class,'form']);
+

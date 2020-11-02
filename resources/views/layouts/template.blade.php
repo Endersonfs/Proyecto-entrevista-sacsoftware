@@ -476,6 +476,27 @@
 							</div>
 						</li>
 						<li class="nav-item">
+							<a data-toggle="collapse" href="#forms">
+								<i class="fas fa-pen-square"></i>
+								<p>Asiento</p>
+								<span class="caret"></span>
+							</a>
+							<div class="collapse" id="forms">
+								<ul class="nav nav-collapse">
+									<li>
+										<a href="/catalogo">
+											<span class="sub-item">Crear</span>
+										</a>
+									</li>
+									<li>
+										<a href="forms/forms.html">
+											<span class="sub-item">Lista</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="nav-item">
 							<a data-toggle="collapse" href="#tables">
 								<i class="fas fa-table"></i>
 								<p>Tareas </p>
