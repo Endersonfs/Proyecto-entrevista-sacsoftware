@@ -355,14 +355,34 @@
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#base">
 								<i class="fas fa-layer-group"></i>
-								<p>Solicitudes</p>
+								<p>Estado Financiero</p>
 								<span class="caret"></span>
 							</a>
 							<div class="collapse" id="base">
-								<ul class="nav nav-collapse">
+								<ul class="nav nav-collapse">									
 									<li>
 										<a href="components/avatars.html">
-											<span class="sub-item">Crear solicitud</span>
+											<span class="sub-item">Balance General</span>
+										</a>
+									</li>
+									<li>
+										<a href="components/avatars.html">
+											<span class="sub-item">Estado de situación</span>
+										</a>
+									</li>
+									<li>
+										<a href="components/avatars.html">
+											<span class="sub-item">Estado Resultado</span>
+										</a>
+									</li>
+									<li>
+										<a href="components/avatars.html">
+											<span class="sub-item">Balanza de comprobación</span>
+										</a>
+									</li>
+									<li>
+										<a href="components/avatars.html">
+											<span class="sub-item">Capital</span>
 										</a>
 									</li>
 									{{-- <li>
@@ -464,12 +484,12 @@
 									</li>
 									<li>
 										<a href="forms/forms.html">
-											<span class="sub-item">Ingresos</span>
+											<span class="sub-item">Cuentas por cobrar</span>
 										</a>
 									</li>
 									<li>
 										<a href="forms/forms.html">
-											<span class="sub-item">Gastos</span>
+											<span class="sub-item">Cuentar por pagar</span>
 										</a>
 									</li>
 								</ul>
@@ -477,7 +497,7 @@
 						</li>
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#asiento">
-								<i class="fas fa-pen-square"></i>
+								<i class="fas fa-clipboard-list"></i>
 								<p>Asiento</p>
 								<span class="caret"></span>
 							</a>
@@ -535,8 +555,29 @@
 						</li> --}}
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#charts">
-								<i class="far fa-chart-bar"></i>
+								<i class="fas fa-box-open"></i>
 								<p>Inventario</p>
+								{{-- <span class="caret"></span> --}}
+							</a>
+							{{-- <div class="collapse" id="charts">
+								<ul class="nav nav-collapse">
+									<li>
+										<a href="charts/charts.html">
+											<span class="sub-item">Chart Js</span>
+										</a>
+									</li>
+									<li>
+										<a href="charts/sparkline.html">
+											<span class="sub-item">Sparkline</span>
+										</a>
+									</li>
+								</ul>
+							</div> --}}
+						</li>
+						<li class="nav-item">
+							<a data-toggle="collapse" href="#reporte">
+								<i class="far fa-chart-bar"></i>
+								<p>Reporte</p>
 								{{-- <span class="caret"></span> --}}
 							</a>
 							{{-- <div class="collapse" id="charts">

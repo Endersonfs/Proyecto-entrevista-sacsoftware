@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 use Http;
+use App\Models\Asiento;
 
 class AsientoController extends Controller
 {
@@ -30,42 +31,21 @@ class AsientoController extends Controller
         return view('asientos.lista', compact(['listaasiento']));
     }
     public function crear(Request $request)
-    {
+    {       
+        $asiento = new Asiento();
+
+        $asiento -> ID_usuarioregistro = 1;
+        $asiento -> ID_proveedor = $request -> proveedores;
+
+        $asiento -> ID_catalogocuenta = $request -> cuenta;
+        $asiento -> ID_catalogodecuenta_Salida = $request -> cuenta2;
         
-        // $datos=[];
-        // $datos['ID_usuarioregistro']=1;
-        // $datos['ID_proveedor']= request('proveedores');
-        // $datos['ID_catalogocuenta']=request('cuenta');
-        // $datos['ID_tiporegistrocontable']=request('tasiento');
-        // $datos['Descripcion']=request('comentario');
-        // $datos['monto']=request('monto');
+        $asiento -> ID_tiporegistrocontable = $request -> tasiento;
 
-        // $response = Http::post('http://localhost/api-labopaes/listaasiento', [
-        //     'ID_usuarioregistro'=>1,
-        //     'ID_proveedor'=>$request->all('proveedores'),
-        //     'ID_catalogocuenta'=>1,
-        //     'ID_tiporegistrocontable'=>1,
-        //     'tiporegistrocontable'=>2,
-        //     'Descripcion'=>"Hola Mundo beta laravel",
-        //     'monto'=>205430.95
-
-        // ]);
-
-        $client = new \GuzzleHttp\Client();
-        $url = "http://localhost/api-labopaes/listaasiento'";
-       
-        $myBody['name'] = "Demo";
-        $request = $client->post($url,  ['body'=>$myBody]);
-        $response = $request->send();
-      
-        dd($response);
-        
-        // echo $response->getBody();
-
-
-        // $convert = json_encode($datos);
-        // error_log($response->getBody());
-        
-        // return redirect('/asientos/lista');
+        $asiento -> Descripcion = $request-> comentario;
+        $asiento -> monto = $request -> monto;
+        $asiento -> save();
+          
+         return redirect('/asientos/lista');
     }
 }
