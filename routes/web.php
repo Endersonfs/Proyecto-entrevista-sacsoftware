@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProveedoresController;
 use App\Http\Controllers\CatalogoCuentaController;
 use App\Http\Controllers\AsientoController;
+use App\Http\Controllers\InventarioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -69,5 +70,10 @@ Route::get('/catalogo/ce',[CatalogoCuentaController::class,'ce']);
 Route::get('/asientos/formulario',[AsientoController::class,'formulario']);
 Route::get('/asientos/lista',[AsientoController::class,'lista']);
 Route::post('/asientos/crear',[AsientoController::class,'crear']);
+
+//Inventario -
+Route::get('/inventario/lista',[InventarioController::class,'index']);
+Route::get('/inventario/listaregistro',[InventarioController::class,'listaregistro']);
+Route::get('/inventario/agregar',[InventarioController::class,'agregar']);
 
 

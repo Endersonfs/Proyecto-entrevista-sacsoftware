@@ -537,6 +537,37 @@
 								</ul>
 							</div>
 						</li>
+						<li class="nav-item">
+							<a data-toggle="collapse" href="#inventario">
+								<i class="fas fa-box-open"></i>
+								<p>Inventario </p>
+								<span class="caret"></span>
+							</a>
+							<div class="collapse" id="inventario">
+								<ul class="nav nav-collapse">
+									<li>
+										<a href="/inventario/agregar">
+											<span class="sub-item">Agregar</span>
+										</a>
+									</li>
+									<li>
+										<a href="/inventario/lista">
+											<span class="sub-item">Cantidad</span>
+										</a>
+									</li>
+									<li>
+										<a href="/inventario/listaregistro">
+											<span class="sub-item">Registros</span>
+										</a>
+									</li>
+									{{-- <li>
+										<a href="tables/datatables.html">
+											<span class="sub-item">Datatables</span>
+										</a>
+									</li> --}}
+								</ul>
+							</div>
+						</li>
 						{{-- <li class="nav-item">
 							<a data-toggle="collapse" href="#maps">
 								<i class="fas fa-map-marker-alt"></i>
@@ -553,27 +584,7 @@
 								</ul>
 							</div>
 						</li> --}}
-						<li class="nav-item">
-							<a data-toggle="collapse" href="#charts">
-								<i class="fas fa-box-open"></i>
-								<p>Inventario</p>
-								{{-- <span class="caret"></span> --}}
-							</a>
-							{{-- <div class="collapse" id="charts">
-								<ul class="nav nav-collapse">
-									<li>
-										<a href="charts/charts.html">
-											<span class="sub-item">Chart Js</span>
-										</a>
-									</li>
-									<li>
-										<a href="charts/sparkline.html">
-											<span class="sub-item">Sparkline</span>
-										</a>
-									</li>
-								</ul>
-							</div> --}}
-						</li>
+						
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#reporte">
 								<i class="far fa-chart-bar"></i>
