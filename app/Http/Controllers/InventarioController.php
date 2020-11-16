@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Inventario;
 use Http;
 
 class InventarioController extends Controller
@@ -27,5 +28,19 @@ class InventarioController extends Controller
         $listaregistroF = $tregistro->json();
 
         return view('inventario.registro',compact(['listaInventario','listaregistroF']));
+    }
+    public function guardarRegistro(Request $request){
+        try{
+            $inventario = new Inventario();           
+            $inventario->ID_Inventario = $request->producto;
+            $inventario->ID_tipo_invrentarioRegistro = $request->tregistro;
+            $inventario->ID_UsuarioRegistrado =1;
+            $inventario->Cantidad = $request->cantidad;
+            $inventario->save();
+        }catch(Exception $e){
+            echo '<script language="javascript">alert("Error al guardar");</script>';
+        }
+        
+        return redirect('/inventario/listaregistro');
     }
 }

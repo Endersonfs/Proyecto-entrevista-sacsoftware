@@ -33,7 +33,7 @@
                     <div class="card-header">
                         <div class="card-title">Formulario de registro</div>
                     </div>
-                    <form method="POST" action="/asientos/crear">
+                    <form method="POST" action="/inventario/guardar">
                         {{-- seguridad para formulario --}}
                         @csrf
                         <div class="card-body">
@@ -41,7 +41,7 @@
                                 <div class="col-md-6 col-lg-6">
                                     <div class="form-group">
                                         <label for="email2">Producto</label>
-                                        <select class="form-control" id="exampleFormControlSelect1" name="cuenta">                                        
+                                        <select class="form-control" id="exampleFormControlSelect1" name="producto">                                        
                                             @foreach ($listaInventario as $inventario)
                                                 <option value="{{$inventario['ID_Inventario']}}">{{$inventario['Descripcion']}}</option>                                       
                                             @endforeach
@@ -52,7 +52,7 @@
                                     <div class="form-group">
                                         <label for="password">Cantidad</label>
                                         <div class="input-group mb-3">                                            
-                                            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="monto" placeholder="00">                                            
+                                            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="cantidad" placeholder="00">                                            
                                         </div>
                                     </div>                                 
                                 </div>
@@ -62,7 +62,7 @@
                                         <small id="emailHelp2" class="form-text text-muted"></small>
                                         <label>Tipo de registro</label>
                                         <div class="input-group mb-3">
-                                            <select class="form-control" id="exampleFormControlSelect1" name="tasiento">                                        
+                                            <select class="form-control" id="exampleFormControlSelect1" name="tregistro">                                        
                                                 @foreach ($listaregistroF as $tregistro)
                                                     <option value="{{$tregistro['ID_inventario_tipoRegistro']}}">{{$tregistro['descripcion']}}</option>                                       
                                                 @endforeach

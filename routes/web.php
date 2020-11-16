@@ -75,5 +75,6 @@ Route::post('/asientos/crear',[AsientoController::class,'crear']);
 Route::get('/inventario/lista',[InventarioController::class,'index']);
 Route::get('/inventario/listaregistro',[InventarioController::class,'listaregistro']);
 Route::get('/inventario/agregar',[InventarioController::class,'agregar']);
+Route::post('inventario/guardar',[InventarioController::class,'guardarRegistro']);
 
 
