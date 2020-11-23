@@ -376,7 +376,7 @@
 										</a>
 									</li>
 									<li>
-										<a href="components/avatars.html">
+										<a href="/balancefinanciero/bcomprobacion">
 											<span class="sub-item">Balanza de comprobación</span>
 										</a>
 									</li>

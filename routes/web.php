@@ -6,6 +6,7 @@ use App\Http\Controllers\ProveedoresController;
 use App\Http\Controllers\CatalogoCuentaController;
 use App\Http\Controllers\AsientoController;
 use App\Http\Controllers\InventarioController;
+use App\Http\Controllers\BalanceFinancieroController;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,5 +77,8 @@ Route::get('/inventario/lista',[InventarioController::class,'index']);
 Route::get('/inventario/listaregistro',[InventarioController::class,'listaregistro']);
 Route::get('/inventario/agregar',[InventarioController::class,'agregar']);
 Route::post('inventario/guardar',[InventarioController::class,'guardarRegistro']);
+
+// Balance financiero
+Route::get('/balancefinanciero/bcomprobacion',[BalanceFinancieroController::class,'balanceComprobacion']);
 
 
