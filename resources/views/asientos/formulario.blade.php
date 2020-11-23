@@ -58,43 +58,6 @@
                                         <small id="emailHelp2" class="form-text text-muted">Catalogo de cuenta a registrar</small>
                                     </div>
                                     <div class="form-group">
-                                        <label for="password">Monto</label>
-                                        <div class="input-group mb-3">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text">$</span>
-                                            </div>
-                                            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="monto">
-                                            <div class="input-group-append">
-                                                <span class="input-group-text">.00</span>
-                                            </div>
-                                        </div>
-                                    </div>                                 
-                                </div>
-                                
-                                <div class="col-md-6 col-lg-6">
-                                    <div class="form-group">
-                                        <small id="emailHelp2" class="form-text text-muted"></small>
-                                        <label>Tipo de Asiento Entrada</label>
-                                        <div class="input-group mb-3">
-                                            <select class="form-control" id="exampleFormControlSelect1" name="tasiento">                                        
-                                                @foreach ($tiporegistro as $tregistro)
-                                                    <option value="{{$tregistro['ID_tiporegistrocontrable']}}">{{$tregistro['Descripcion']}}</option>                                       
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-                                    {{-- <div class="form-group">
-                                        <small id="emailHelp2" class="form-text text-muted"></small>
-                                        <label>Tipo de Asiento Salida</label>
-                                        <div class="input-group mb-3">
-                                            <select class="form-control" id="exampleFormControlSelect1" name="tasiento2">                                        
-                                                @foreach ($tiporegistro as $tregistro)
-                                                    <option value="{{$tregistro['ID_tiporegistrocontrable']}}">{{$tregistro['Descripcion']}}</option>                                       
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div> --}}
-                                    <div class="form-group">
                                         <small id="emailHelp2" class="form-text text-muted"></small>
                                         <label for="email2">Proveedor</label>
                                         <div class="input-group mb-3">
@@ -108,6 +71,69 @@
                                             </select>
                                         </div>
                                     </div>
+                                                                     
+                                </div>
+                                
+                                <div class="col-md-6 col-lg-6">
+                                    <div class="form-group">
+                                        <label for="password">Monto</label>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">$</span>
+                                            </div>
+                                            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="monto">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text">.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Monto</label>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">$</span>
+                                            </div>
+                                            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="monto2">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text">.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{-- <div class="form-group">
+                                        <small id="emailHelp2" class="form-text text-muted"></small>
+                                        <label>Tipo de Asiento </label>
+                                        <div class="input-group mb-3">
+                                            <select class="form-control" id="exampleFormControlSelect1" name="tasiento">                                        
+                                                @foreach ($tiporegistro as $tregistro)
+                                                    <option value="{{$tregistro['ID_tiporegistrocontrable']}}">{{$tregistro['Descripcion']}}</option>                                       
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div> --}}
+                                    {{-- <div class="form-group">
+                                        <small id="emailHelp2" class="form-text text-muted"></small>
+                                        <label>Tipo de Asiento </label>
+                                        <div class="input-group mb-3">
+                                            <select class="form-control" id="exampleFormControlSelect1" name="tregistro">                                        
+                                                @foreach ($tiporegistro as $tregistro)
+                                                    <option value="{{$tregistro['ID_tiporegistrocontrable']}}">{{$tregistro['Descripcion']}}</option>                                       
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div> --}}
+                                    
+                                    {{-- <div class="form-group">
+                                        <small id="emailHelp2" class="form-text text-muted"></small>
+                                        <label>Tipo de Asiento Salida</label>
+                                        <div class="input-group mb-3">
+                                            <select class="form-control" id="exampleFormControlSelect1" name="tasiento2">                                        
+                                                @foreach ($tiporegistro as $tregistro)
+                                                    <option value="{{$tregistro['ID_tiporegistrocontrable']}}">{{$tregistro['Descripcion']}}</option>                                       
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div> --}}
+                                    
                                 </div>
                                  
                                 <div class="col-md-6 col-lg-12">
