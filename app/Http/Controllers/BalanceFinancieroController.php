@@ -10,6 +10,10 @@ class BalanceFinancieroController extends Controller
     //controlador para balance financiero
     public function balanceComprobacion()
     {
-        return view('balancefinanciero.bcomprobacion');
+        $respuesta = Http::get("http://localhost/api-labopaes/balacefinanciero/bcomprobacion");
+        $rsTotal = Http::get('http://localhost/api-labopaes/balacefinanciero/bcomprobaciont');
+        $total = $rsTotal->json();
+        $listado = $respuesta->json();
+        return view('balancefinanciero.bcomprobacion',compact(['listado','total']));
     }
 }
