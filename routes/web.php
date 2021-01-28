@@ -7,6 +7,7 @@ use App\Http\Controllers\CatalogoCuentaController;
 use App\Http\Controllers\AsientoController;
 use App\Http\Controllers\InventarioController;
 use App\Http\Controllers\BalanceFinancieroController;
+use App\Http\Controllers\RecesionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -80,5 +81,8 @@ Route::post('inventario/guardar',[InventarioController::class,'guardarRegistro']
 
 // Balance financiero
 Route::get('/balancefinanciero/bcomprobacion',[BalanceFinancieroController::class,'balanceComprobacion']);
+
+//Recion
+Route::get('/recision/crear',[RecesionController::class,'create']);
 
 

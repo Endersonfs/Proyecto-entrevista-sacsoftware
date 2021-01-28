@@ -538,6 +538,27 @@
 							</div>
 						</li>
 						<li class="nav-item">
+							<a data-toggle="collapse" href="#recesion">
+								<i class="fas fa-table"></i>
+								<p>recesión </p>
+								<span class="caret"></span>
+							</a>
+							<div class="collapse" id="recesion">
+								<ul class="nav nav-collapse">
+									<li>
+										<a href="/recision/crear">
+											<span class="sub-item">Agregar Nuevo</span>
+										</a>
+									</li>
+									<li>
+										<a href="tables/datatables.html">
+											<span class="sub-item">Listado</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="nav-item">
 							<a data-toggle="collapse" href="#inventario">
 								<i class="fas fa-box-open"></i>
 								<p>Inventario </p>
