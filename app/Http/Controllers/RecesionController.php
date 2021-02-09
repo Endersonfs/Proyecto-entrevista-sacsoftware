@@ -17,4 +17,7 @@ class RecesionController extends Controller
         $listado = $respuesta->json();
         return view('recesion.lista',compact('listado'));
     }
+    public function listaopcion(){        
+        return view('recesion.listaopcion');
+    }    
 }

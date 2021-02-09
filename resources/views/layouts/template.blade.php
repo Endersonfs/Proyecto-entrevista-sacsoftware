@@ -539,7 +539,7 @@
 						</li>
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#recesion">
-								<i class="fas fa-table"></i>
+								<i class="fas fa-book"></i>
 								<p>recesión </p>
 								<span class="caret"></span>
 							</a>
@@ -551,7 +551,7 @@
 										</a>
 									</li>
 									<li>
-										<a href="/recision/lista">
+										<a href="/recision/listaopcion">
 											<span class="sub-item">Listado</span>
 										</a>
 									</li>

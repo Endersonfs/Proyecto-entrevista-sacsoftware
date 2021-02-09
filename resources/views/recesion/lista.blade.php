@@ -63,12 +63,21 @@
                                             <td>{{$asiento['Estado']}}</td>
                                             <td>{{$asiento['Fecha_Registro']}}</td>
                                             <td>
-                                                <button class="btn btn-primary">
-                                                    <span class="btn-label">
-                                                        <i class="fa fa-info"></i>
-                                                    </span>
-                                                        Detalles
-                                                </button>
+                                                <div class="col-md-12">                                                    
+                                                        <button class="btn btn-primary" style="margin: 2px;padding-left: 27px;">
+                                                            <span class="btn-label">
+                                                                <i class="fa fa-info"></i>
+                                                            </span>
+                                                                Detalles
+                                                        </button>
+                                                        <br>
+                                                        <button class="btn btn-success">
+                                                            <span class="btn-label">
+                                                                <i class="fa fa-check"></i>
+                                                            </span>
+                                                            Facturar
+                                                        </button>
+                                                </div> 
                                              </td>
                                         </tr>
                                         @endforeach
