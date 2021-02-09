@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Http;
 
 class RecesionController extends Controller
 {
@@ -12,6 +13,8 @@ class RecesionController extends Controller
         return view('recesion.create');
     }
     public function lista(){
-        return view('recesion.lista');
+        $respuesta = Http::get('http://localhost/api-labopaes/recesion/biopsias');
+        $listado = $respuesta->json();
+        return view('recesion.lista',compact('listado'));
     }
 }

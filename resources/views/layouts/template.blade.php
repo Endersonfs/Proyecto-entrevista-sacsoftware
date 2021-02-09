@@ -551,7 +551,7 @@
 										</a>
 									</li>
 									<li>
-										<a href="tables/datatables.html">
+										<a href="/recision/lista">
 											<span class="sub-item">Listado</span>
 										</a>
 									</li>
