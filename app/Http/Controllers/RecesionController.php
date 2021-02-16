@@ -20,4 +20,7 @@ class RecesionController extends Controller
     public function listaopcion(){        
         return view('recesion.listaopcion');
     }    
+    public function crearbio(){        
+        return view('recesion.createbio');
+    }    
 }

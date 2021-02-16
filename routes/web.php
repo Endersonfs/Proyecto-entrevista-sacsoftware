@@ -86,5 +86,6 @@ Route::get('/balancefinanciero/bcomprobacion',[BalanceFinancieroController::clas
 Route::get('/recision/crear',[RecesionController::class,'create']);
 Route::get('/recision/lista',[RecesionController::class, 'lista']);
 Route::get('/recision/listaopcion',[RecesionController::class,'listaopcion']);
+Route::get('/recision/bio',[RecesionController::class,'crearbio']);
 
 
