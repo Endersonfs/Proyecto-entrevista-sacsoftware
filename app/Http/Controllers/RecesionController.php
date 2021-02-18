@@ -42,7 +42,10 @@ class RecesionController extends Controller
         $Recesion -> save();
         return view('recesion.createbio');
     }
-    public function detallesbio(){
-        return view('recesion.detallesbio');
+    public function detallesbio($detalle){   
+        $var = $detalle;     
+        $respuesta = Http::get('http://localhost/api-labopaes/recesion/biopsiasd?detalle='.$var.'');
+        $listado = $respuesta->json();
+        return view('recesion.detallesbio',compact('listado'));
     }   
 }

@@ -2,6 +2,7 @@
 
 @section('title','Detalles Biopsia')
 @section('contentpage')
+@foreach ($listado as $bio)
 <div class="content">
     <div class="page-inner">
         <div class="page-header">
@@ -36,109 +37,115 @@
                     <div class="card-body">
                         <table class="table table-bordered">
                             <tbody><tr>
-                                <td style="width: 40%; vertical-align: middle;">Nombre</td>
+                                <td class="fw-bold mb-1" style="width: 40%; vertical-align: middle;">Nombre</td>
                                 <td>
-                                    <p>Jose Manuel Perez</p>		
+                                    
+                                    <p>{{$bio['nombre']}}</p>
+                                    		
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width: 40%; vertical-align: middle;">Cedula</td>
+                                <td class="fw-bold mb-1" style="width: 40%; vertical-align: middle;">Cedula</td>
                                 <td>
-                                    <p>40225896325</p>	
+                                    <p>{{$bio['Cedula']}}</p>	
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width: 40%; vertical-align: middle;">Numero de contacto</td>
+                                <td class="fw-bold mb-1" style="width: 40%; vertical-align: middle;">Numero de contacto</td>
                                 <td>
-                                    <p>8028978978</p>		
+                                    <p>{{$bio['Telefono']}}</p>		
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width: 40%; vertical-align: middle;">Edad</td>
+                                <td class="fw-bold mb-1" style="width: 40%; vertical-align: middle;">Edad</td>
                                 <td>
-                                    <p>25</p>		
+                                    <p>{{$bio['edad']}}</p>		
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width: 40%; vertical-align: middle;">Sexo</td>
+                                <td class="fw-bold mb-1" style="width: 40%; vertical-align: middle;">Sexo</td>
                                 <td>
-                                    <p>Masculino</p>
+                                    <p>{{$bio['sexo']}}</p>
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width: 40%; vertical-align: middle;">Estado del caso</td>
+                                <td class="fw-bold mb-1" style="width: 40%; vertical-align: middle;">Estado del caso</td>
                                 <td>
-                                    <span class="text-warning pl-3">En Proceso</span>		
+                                    @if($bio['Estado'] == 'Completado')
+                                        <span class="text-success">{{$bio['Estado']}}</span>
+                                    @else
+                                        <span class="text-warning">{{$bio['Estado']}}</span>
+                                    @endif		
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width: 40%; vertical-align: middle;">Seguro Medico</td>
+                                <td class="fw-bold mb-1" style="width: 40%; vertical-align: middle;">Seguro Medico</td>
                                 <td>
-                                    <p>ARS Palic</p>		
+                                    <p>{{$bio['Seguro_Medico']}}</p>		
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width: 40%; vertical-align: middle;">Numero de Afiliado</td>
+                                <td class="fw-bold mb-1" style="width: 40%; vertical-align: middle;">Numero de Afiliado</td>
                                 <td>
-                                    <p>2345425234234</p>		
+                                    <p>{{$bio['No_Afiliado']}}</p>		
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width: 40%; vertical-align: middle;">Medico tratante</td>
+                                <td class="fw-bold mb-1" style="width: 40%; vertical-align: middle;">Medico tratante</td>
                                 <td>
-                                    <p>Dr. Suazo</p>	
+                                    <p>{{$bio['Medico_Tratante']}}</p>	
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width: 40%; vertical-align: middle;">Centro Medico</td>
+                                <td class="fw-bold mb-1" style="width: 40%; vertical-align: middle;">Centro Medico</td>
                                 <td>
-                                    <p>Consultorio</p>
+                                    <p>{{$bio['Centro_Medico']}}</p>
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width: 40%; vertical-align: middle;">Tipo de operacion</td>
+                                <td class="fw-bold mb-1" style="width: 40%; vertical-align: middle;">Tipo de operacion</td>
                                 <td>
-                                    		{{-- texto --}}
+                                    <p>{{$bio['tipo_Operacion']}}</p>
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width: 40%; vertical-align: middle;">Muestra de:</td>
+                                <td class="fw-bold mb-1" style="width: 40%; vertical-align: middle;">Muestra de:</td>
                                 <td>
-                                    <p>Biopsia</p>		
+                                    <p>{{$bio['Muestra_de']}}</p>		
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width: 40%; vertical-align: middle;">Diagnostico preoperatorio</td>
+                                <td class="fw-bold mb-1" style="width: 40%; vertical-align: middle;">Diagnostico preoperatorio</td>
                                 <td>
-                                    <p>Verrugas Vulgares</p>		
+                                    <p>{{$bio['Diagnostico_preoperatorio']}}</p>		
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width: 40%; vertical-align: middle;">Fecha de muestra</td>
+                                <td class="fw-bold mb-1" style="width: 40%; vertical-align: middle;">Fecha de muestra</td>
                                 <td>
-                                    <p>2021-02-07 20:40:31</p>		
+                                    <p>{{$bio['Fecha_Muestra']}}</p>		
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width: 40%; vertical-align: middle;">Fecha de recesion</td>
+                                <td class="fw-bold mb-1" style="width: 40%; vertical-align: middle;">Fecha de recesion</td>
                                 <td>
-                                    <p>2021-02-07 20:40:31</p>		
+                                    <p>{{$bio['Diagnostico_preoperatorio']}}</p>		
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width: 40%; vertical-align: middle;">Fecha de entrega</td>
+                                <td class="fw-bold mb-1" style="width: 40%; vertical-align: middle;">Fecha de entrega</td>
                                 <td>
-                                    <p>2021-02-07 20:40:31</p>
+                                    <p>{{$bio['Fecha_entrega']}}</p>
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width: 40%; vertical-align: middle;">Descripcion Macroscopico</td>
+                                <td class="fw-bold mb-1" style="width: 40%; vertical-align: middle;">Descripcion Macroscopico</td>
                                 <td>
                                     <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>	
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width: 40%; vertical-align: middle;">Descripcion Histopatologico</td>
+                                <td class="fw-bold mb-1" style="width: 40%; vertical-align: middle;">Descripcion Histopatologico</td>
                                 <td>
                                     <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>	
                                 </td>
@@ -153,4 +160,5 @@
         </div>
     </div>
 </div>
+@endforeach
 @endsection
