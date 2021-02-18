@@ -33,7 +33,7 @@
                     <div class="card-header">
                         <div class="card-title">Formulario de registro</div>
                     </div>
-                    <form method="POST" action="/asientos/crear">
+                    <form method="POST" action="/recision/guardar">
                         {{-- seguridad para formulario --}}
                         @csrf
                         <div class="card-body">
@@ -41,12 +41,12 @@
                                 <div class="col-md-6 col-lg-6">
                                     <div class="form-group">
                                         <label for="email2">Nombre Completo</label>
-                                        <input type="text" class="form-control" id="exampleFormControlSelect1" name="cuenta2">  
+                                        <input type="text" class="form-control" id="exampleFormControlSelect1" name="nombre">  
                                         <small id="emailHelp2" class="form-text text-muted">Paciente a registrar</small>
                                     </div>
                                     <div class="form-group">
                                         <label for="email2">Identificación</label>
-                                        <input type="text" class="form-control" id="exampleFormControlSelect1" name="cuenta2">  
+                                        <input type="text" class="form-control" id="exampleFormControlSelect1" name="identificacion">  
                                         <small id="emailHelp2" class="form-text text-muted">Cédula o Pasaporte</small>
                                     </div>
                                     <div class="form-group">
@@ -56,7 +56,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text" id="basic-addon1">(000) 000 0000</span>
                                             </div>
-                                            <input type="text" class="form-control" id="exampleFormControlSelect1" name="proveedores">                                        
+                                            <input type="text" class="form-control" id="exampleFormControlSelect1" name="telefono">                                        
                                                
                                             
                                         </div>
@@ -68,7 +68,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text" id="basic-addon1">Nombre</span>
                                             </div>
-                                            <input type="text" class="form-control" id="exampleFormControlSelect1" name="proveedores">                                        
+                                            <input type="text" class="form-control" id="exampleFormControlSelect1" name="mtratante">                                        
                                                 
                                         </div>
                                     </div>
@@ -98,12 +98,12 @@
                                                 <div class="form-group">
                                                     <label for="email2">Edad</label>
                                                     <div class="input-group mb-3">                                                        
-                                                        <select class="form-control" id="exampleFormControlSelect1" name="cuenta">
+                                                        <select class="form-control" id="exampleFormControlSelect1" name="edad">
                                                             @for ($i = 1; $i <=11; $i++)
                                                             <option value="M">{{$i}} mes</option>
                                                             @endfor
                                                             @for($i = 1; $i <=100; $i++)
-                                                            <option value="M">{{$i}} Año</option>
+                                                            <option value="{{$i}}">{{$i}} Año</option>
                                                             @endfor
                                                                                                                         
                                                         </select>
@@ -116,9 +116,9 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label for="email2">Sexo</label>
-                                                <select class="form-control" id="exampleFormControlSelect1" name="cuenta">  
-                                                    <option value="M">Masculino</option>
-                                                    <option value="F">Femenino</option>
+                                                <select class="form-control" id="exampleFormControlSelect1" name="sexo">  
+                                                    <option value="1">Masculino</option>
+                                                    <option value="2">Femenino</option>
 
                                                     {{-- @foreach ($catalogocuenta as $catalogoc)
                                                         <option value="{{$catalogoc['Codigo']}}">{{$catalogoc['Codigo']}} - {{$catalogoc['Descripcion']}} </option>                                       
@@ -134,7 +134,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">Nombre</span>
                                             </div>
-                                            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="monto">
+                                            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="smedico">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -152,7 +152,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">#</span>
                                             </div>
-                                            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="monto2">
+                                            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="noafiliado">
                                             
                                         </div>
                                         <small id="emailHelp2" class="form-text text-muted">Identificación de seguro</small>
