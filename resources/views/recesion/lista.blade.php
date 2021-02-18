@@ -63,12 +63,12 @@
                                             <td>{{$asiento['Estado']}}</td>
                                             {{-- <td>{{$asiento['Fecha_Registro']}}</td> --}}
                                             <td>
-                                                <button class="btn btn-primary" style="margin: 2px;padding-left: 27px;">
+                                                <a href="/recision/detallesbio" class="btn btn-primary" style="color:#fff ;margin: 2px;padding-left: 27px;">
                                                             <span class="btn-label">
                                                                 <i class="fa fa-info"></i>
                                                             </span>
                                                                 Detalles
-                                                        </button>
+                                                        </a>
                                              </td>
                                         </tr>
                                         @endforeach

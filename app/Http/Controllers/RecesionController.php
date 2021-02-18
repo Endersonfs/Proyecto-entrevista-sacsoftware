@@ -41,5 +41,8 @@ class RecesionController extends Controller
 
         $Recesion -> save();
         return view('recesion.createbio');
+    }
+    public function detallesbio(){
+        return view('recesion.detallesbio');
     }   
 }

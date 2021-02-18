@@ -88,5 +88,6 @@ Route::get('/recision/lista',[RecesionController::class, 'lista']);
 Route::get('/recision/listaopcion',[RecesionController::class,'listaopcion']);
 Route::get('/recision/bio',[RecesionController::class,'crearbio']);
 Route::post('/recision/guardar',[RecesionController::class,'guardarBio']);
+Route::get('/recision/detallesbio',[RecesionController::class,'detallesbio']);
 
 
