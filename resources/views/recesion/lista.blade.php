@@ -6,7 +6,7 @@
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">Recesión</h4>
+                <h4 class="page-title">Recepción</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
                         <a href="#">

@@ -7,7 +7,7 @@
         <div class="page-inner">    
             <!-- Customized Card -->
             <div class="page-header">
-                <h4 class="page-title">Recesion</h4>
+                <h4 class="page-title">Recepción</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
                         <a href="#">
@@ -72,7 +72,7 @@
                 <div class="col-md-4">
                     <div class="card card-info card-annoucement card-round">
                         <div class="card-body text-center">
-                            <div class="card-opening">Simpre</div>
+                            <div class="card-opening">THIN-PREP</div>
                             <div class="card-desc">
                                 Lista de registros de  LPTH
                             </div>

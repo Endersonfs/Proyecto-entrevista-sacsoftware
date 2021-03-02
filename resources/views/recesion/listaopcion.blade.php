@@ -72,7 +72,7 @@
                 <div class="col-md-4">
                     <div class="card card-info card-annoucement card-round">
                         <div class="card-body text-center">
-                            <div class="card-opening">Simpre</div>
+                            <div class="card-opening">THIN-PREP</div>
                             <div class="card-desc">
                                 Lista de registros de  LPTH
                             </div>

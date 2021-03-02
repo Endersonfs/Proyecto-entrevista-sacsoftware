@@ -10,7 +10,9 @@ class ProveedoresController extends Controller
     //pagina principal de los proveedores
     public function index(){
         $respuesta = Http::get('http://localhost/api-labopaes/proveedores');
-        $listado = $respuesta->json();        
+
+        $listado = $respuesta->json();
+        
         return view('proveedores.index',compact('listado'));
     }
     //creando proveedores

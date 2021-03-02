@@ -31,7 +31,10 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
+                        <div style="display: flex; justify-content: space-between;">
                         <div class="card-title">Formulario de registro</div>
+                        <div class="card-title">LP-25-2021</div>
+                        </div>
                     </div>
                     <form method="POST" action="/recision/guardar">
                         {{-- seguridad para formulario --}}
@@ -39,15 +42,38 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-6 col-lg-6">
-                                    <div class="form-group">
-                                        <label for="email2">Nombre Completo</label>
-                                        <input type="text" class="form-control" id="exampleFormControlSelect1" name="nombre">  
-                                        <small id="emailHelp2" class="form-text text-muted">Paciente a registrar</small>
+                                    <div class="row row-demo-grid">
+                                        <div class="col">
+                                                <div class="form-group">
+                                                    <label for="email2">Nombre</label>
+                                                    <div class="input-group mb-3">                                                        
+                                                        <input type="text" class="form-control" id="exampleFormControlSelect1" name="nombre">                                                                                                         
+                                                    </div>
+                                                </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label for="email2">Apellidos</label>
+                                                <input type="text" class="form-control" id="exampleFormControlSelect1" name="apellido">                                                     
+                                            </div>
+                                        </div>
                                     </div>
+                                    {{-- <div class="row row-demo-grid">                                        
+                                            <div class="form-group">
+                                                <label for="email2">Nombre Completo</label>
+                                                <input type="text" class="form-control" id="exampleFormControlSelect1" name="nombre">  
+                                                <small id="emailHelp2" class="form-text text-muted">Paciente a registrar</small>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="email2">Nombre Completo</label>
+                                                <input type="text" class="form-control" id="exampleFormControlSelect1" name="nombre">  
+                                                <small id="emailHelp2" class="form-text text-muted">Paciente a registrar</small>                                           
+                                        </div>
+                                    </div> --}}
                                     <div class="form-group">
                                         <label for="email2">Identificación</label>
-                                        <input type="text" class="form-control" id="exampleFormControlSelect1" name="identificacion">  
-                                        <small id="emailHelp2" class="form-text text-muted">Cédula o Pasaporte</small>
+                                        <input type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Cédula o Pasaporte" name="identificacion">  
+                                        {{-- <small id="emailHelp2" class="form-text text-muted">Cédula o Pasaporte</small> --}}
                                     </div>
                                     <div class="form-group">
                                         <small id="emailHelp2" class="form-text text-muted"></small>
@@ -76,15 +102,19 @@
                                         <small id="emailHelp2" class="form-text text-muted"></small>
                                         <label for="email2">Tipo de Operación</label>
                                         <div class="input-group mb-3">                                            
-                                            <input type="text" class="form-control" id="exampleFormControlSelect1" name="proveedores">                                        
-                                                
+                                            {{-- <input type="text" class="form-control" id="exampleFormControlSelect1" name="toperacion ">                                         --}}
+                                            <select class="form-control" id="exampleFormControlSelect1" name="toperacion">
+                                                @foreach($listadotop as $listaop)                                                        
+                                                        <option value="{{$listaop['ID_toperacion']}}">{{$listaop['Codigo']}} - {{$listaop['Descripcion']}}</option> 
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <small id="emailHelp2" class="form-text text-muted"></small>
                                         <label for="email2">Diagnostico preoperatorio</label>
                                         <div class="input-group mb-3">                                            
-                                            <input type="text" class="form-control" id="exampleFormControlSelect1" name="proveedores">                                        
+                                            <input type="text" class="form-control" id="exampleFormControlSelect1" name="dpre">                                        
                                                 
                                         </div>
                                     </div>
@@ -100,7 +130,7 @@
                                                     <div class="input-group mb-3">                                                        
                                                         <select class="form-control" id="exampleFormControlSelect1" name="edad">
                                                             @for ($i = 1; $i <=11; $i++)
-                                                            <option value="M">{{$i}} mes</option>
+                                                            <option value="{{$i}}M">{{$i}} mes</option>
                                                             @endfor
                                                             @for($i = 1; $i <=100; $i++)
                                                             <option value="{{$i}}">{{$i}} Año</option>
@@ -120,8 +150,8 @@
                                                     <option value="1">Masculino</option>
                                                     <option value="2">Femenino</option>
 
-                                                    {{-- @foreach ($catalogocuenta as $catalogoc)
-                                                        <option value="{{$catalogoc['Codigo']}}">{{$catalogoc['Codigo']}} - {{$catalogoc['Descripcion']}} </option>                                       
+                                                    {{-- @foreach ($listaSMuenta as $listaSM)
+                                                        <option value="{{$listaSM['Codigo']}}">{{$listaSM['Codigo']}} - {{$listaSM['Descripcion']}} </option>                                       
                                                     @endforeach --}}
                                                 </select>
                                             </div>
@@ -134,15 +164,22 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">Nombre</span>
                                             </div>
-                                            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="smedico">
+                                            {{-- <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="smedico"> --}}
+                                            <select class="form-control" id="exampleFormControlSelect1" name="smedico">
+                                                @foreach ($listado as $listaSM)
+                                                    @if ($listaSM['tprest'] =='Aseguradoras') 
+                                                        <option value="{{$listaSM['proveedoresID']}}">{{$listaSM['nombre']}}</option>                                       
+                                                    @endif    
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="password">Tipo Aseguradora</label>
                                         <div class="input-group mb-3">                                            
-                                            <select class="form-control" id="exampleFormControlSelect1" name="cuenta">  
-                                                <option value="M">Pública</option>
-                                                <option value="F">Privada</option>
+                                            <select class="form-control" id="exampleFormControlSelect1" name="taseguradora">  
+                                                <option value="1">Pública</option>
+                                                <option value="2">Privada</option>
                                             </select>
                                         </div>
                                     </div>
@@ -155,7 +192,7 @@
                                             <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="noafiliado">
                                             
                                         </div>
-                                        <small id="emailHelp2" class="form-text text-muted">Identificación de seguro</small>
+                                        {{-- <small id="emailHelp2" class="form-text text-muted">Identificación de seguro</small> --}}
                                     </div>
                                     <div class="form-group">
                                         <label for="password">Centro Médico</label>
@@ -163,19 +200,19 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">Nombre</span>
                                             </div>
-                                            <select class="form-control" id="exampleFormControlSelect1" name="cuenta">  
-                                                <option value="M">ARS Palic</option>
-                                                <option value="F">Decom</option>
-                                                    {{-- @foreach ($catalogocuenta as $catalogoc)
-                                                        <option value="{{$catalogoc['Codigo']}}">{{$catalogoc['Codigo']}} - {{$catalogoc['Descripcion']}} </option>                                       
-                                                    @endforeach --}}
+                                            <select class="form-control" id="exampleFormControlSelect1" name="centroMe">
+                                                @foreach ($listado as $listaCM)
+                                                    @if ($listaCM['tprest'] =='Centro Médico') 
+                                                        <option value="{{$listaCM['proveedoresID']}}">{{$listaCM['nombre']}}</option>                                       
+                                                    @endif    
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="password">Muestras de</label>
                                         <div class="input-group mb-3">                                            
-                                            <input type="text" class="form-control" id="exampleFormControlSelect1" name="cuenta">  
+                                            <input type="text" class="form-control" id="exampleFormControlSelect1" name="muestrade">  
                                                 
                                         </div>
                                     </div>
@@ -223,7 +260,7 @@
                                             <div class="form-group">
                                                 <label for="email2">Fecha de Muestra</label>
                                                 <div class="input-group mb-3">                                                        
-                                                    <input type="date" class="form-control" aria-label="Amount (to the nearest dollar)" name="monto">
+                                                    <input type="date" class="form-control" aria-label="Amount (to the nearest dollar)" name="fecham">
                                                 </div>
                                             </div>
                                         </div>
@@ -241,7 +278,7 @@
                                             <div class="form-group">
                                                 <label for="email2">fecha de Entrega</label>
                                                 <div class="input-group mb-3">                                                        
-                                                    <input type="date" class="form-control" aria-label="Amount (to the nearest dollar)" name="monto">
+                                                    <input type="date" class="form-control" aria-label="Amount (to the nearest dollar)" name="fechaentrega">
                                                 </div>
                                             </div>
                                         </div>
@@ -251,14 +288,14 @@
                                 <div class="col-md-6 col-lg-12">
                                     <label for="comment">Descripcion Macroscopica</label>
                                     <div class="form-group">                                    
-                                        <textarea name="comentario" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Agregar Descripcion Macroscopica"></textarea>
+                                        <textarea name="dmacro" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Agregar Descripcion Macroscopica"></textarea>
                                         </textarea>
                                     </div>
                                 </div>                           
                                 <div class="col-md-6 col-lg-12">
                                     <label for="comment">Descripcion Histopatologica</label>
                                     <div class="form-group">                                    
-                                        <textarea name="comentario" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Agregar Descripcion Histopatologica"></textarea>
+                                        <textarea name="dhist" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Agregar Descripcion Histopatologica"></textarea>
                                         </textarea>
                                     </div>
                                 </div>                           
@@ -266,14 +303,14 @@
                         </div>
                         <div class="card-action">
                             <button class="btn btn-success">Registrar</button>
-                            <button class="btn btn-danger">Cancelar</button>
+                            <a href="/recision/crear" class="btn btn-danger">Cancelar</a>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</div></div>
 {{-- final de formulario --}}
 
 @endsection

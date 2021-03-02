@@ -42,7 +42,7 @@
                                             <th rowspan="1" colspan="1">Proveedor</th>
                                             <th rowspan="1" colspan="1">Tipo Proveedor</th>
                                             <th rowspan="1" colspan="1">Codigo 1</th>
-                                            <th rowspan="1" colspan="1">Cuenta 2</th>
+                                            {{-- <th rowspan="1" colspan="1">Cuenta 2</th> --}}
                                             <th rowspan="1" colspan="1">Cuenta</th>
                                             <th rowspan="1" colspan="1">Tipo asiento</th>
                                             <th rowspan="1" colspan="1">Comentario</th>
@@ -56,7 +56,7 @@
                                             <td class="sorting_1">{{$asiento['proveedores']}}</td>                                            
                                             <td>{{$asiento['tproveedor']}}</td>
                                             <td>{{$asiento['codigo']}}</td>
-                                            <td>{{$asiento['codigosalida']}}</td>
+                                            {{-- <td>{{$asiento['codigosalida']}}</td> --}}
                                             <td>{{$asiento['catalogocuenta']}}</td>
                                             <td>{{$asiento['tiporegistrocontable']}}</td>
                                             <td>{{$asiento['comentario']}}</td>
