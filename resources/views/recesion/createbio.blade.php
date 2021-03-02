@@ -27,16 +27,23 @@
                 </li>
             </ul>
         </div>
+        <form method="POST" action="/recision/guardar">
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between;">
-                        <div class="card-title">Formulario de registro</div>
-                        <div class="card-title">LP-25-2021</div>
+                            <div class="card-title">Formulario de registro</div>
+                            @foreach ($listadatosbio as $codigoBIo)
+                            <div class="card-title">
+                                LP - {{$codigoBIo['cantidadBIo']+1}} - 2021
+                                {{-- input para almacenar el valor del numero de caso  --}}
+                                <input name="codigoCaso" value="{{$codigoBIo['cantidadBIo']+1}}" type="text" class="form-control" id="exampleFormControlSelect1" style="display: none">
+                            </div>
                         </div>
+                        @endforeach
                     </div>
-                    <form method="POST" action="/recision/guardar">
+                    
                         {{-- seguridad para formulario --}}
                         @csrf
                         <div class="card-body">

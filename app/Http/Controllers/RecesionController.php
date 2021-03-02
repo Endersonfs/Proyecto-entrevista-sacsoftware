@@ -17,8 +17,6 @@ class RecesionController extends Controller
     public function lista(){
         $respuesta = Http::get('http://localhost/api-labopaes/recesion/biopsias');
         
-
-        
         $listado = $respuesta->json();
         return view('recesion.lista',compact(['listado']));
     }
@@ -28,12 +26,16 @@ class RecesionController extends Controller
     public function crearbio(){
         $respuesta = Http::get('http://localhost/api-labopaes/proveedores');
         $respuestatop = Http::get('http://localhost/api-labopaes/recesion/toperacion');
-
+        $respuestadatosbio = Http::get('http://localhost/api-labopaes/recesion/datosbiopsias');
+        
+        $listado = $respuesta->json();
         $listadotop =$respuestatop->json();
-        $listado = $respuesta->json();        
-        return view('recesion.createbio',compact(['listado','listadotop']));
+        $listadatosbio = $respuestadatosbio->json();
+        
+        return view('recesion.createbio',compact(['listado','listadotop','listadatosbio']));
     } 
-    public function guardarBio(Request $request){  
+    public function guardarBio(Request $request){ 
+               
         //variables necesarias
         $txt = $request->edad;
         $textfind = "M";
@@ -55,8 +57,7 @@ class RecesionController extends Controller
         } else {
             $Recesion->Edad =$text ;
             $Recesion->ID_edadtipo =1; //mes
-        }
-        
+        }        
         // final de almacenando datos de edad y tipo de edad
         $Recesion->Cedula=$request->identificacion;
         $Recesion->Telefono = $request->telefono;
@@ -73,6 +74,8 @@ class RecesionController extends Controller
         $Recesion->Fecha_entrega = $request->fechaentrega;
         $Recesion->Descripcion_Macroscopica = $request->dmacro;
         $Recesion->Diagnosticos_histopatologico = $request->dhist;
+        $Recesion->numeroDeCaso = $request->codigoCaso;
+
 
 
         $Recesion -> save();

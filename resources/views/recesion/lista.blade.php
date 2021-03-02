@@ -41,12 +41,11 @@
                                         <tr role="row">
                                             <th rowspan="1" colspan="1">Nombre</th>
                                             <th rowspan="1" colspan="1">Edad</th>
-                                            <th rowspan="1" colspan="1">Cedula</th>
                                             <th rowspan="1" colspan="1">Sexo</th>
-                                            <th rowspan="1" colspan="1">Telefono</th>
                                             <th rowspan="1" colspan="1">Medico tratante</th>
                                             <th rowspan="1" colspan="1">Centro medico</th>
-                                            <th rowspan="1" colspan="1">Esta de Caso</th>
+                                            <th rowspan="1" colspan="1">Codigo</th>
+                                            <th rowspan="1" colspan="1">Estado</th>
                                             <th rowspan="1" colspan="1">Fecha Registro</th>
                                     </thead>
                                     
@@ -54,12 +53,11 @@
                                         @foreach ($listado as $asiento)
                                         <tr role="row" class="odd">
                                             <td class="sorting_1">{{$asiento['nombre']}}</td>                                            
-                                            <td>{{$asiento['edad']}}</td>
-                                            <td>{{$asiento['Cedula']}}</td>
+                                            <td>{{$asiento['edad']}}</td>                                            
                                             <td>{{$asiento['sexo']}}</td>
-                                            <td>{{$asiento['Telefono']}}</td>
                                             <td>{{$asiento['Medico_Tratante']}}</td>
                                             <td>{{$asiento['Centro_Medico']}}</td>
+                                            <td>LP-{{$asiento['ID_Biopsias']}}-21</td>
                                             <td>{{$asiento['Estado']}}</td>
                                             {{-- <td>{{$asiento['Fecha_Registro']}}</td> --}}
                                             <td>
