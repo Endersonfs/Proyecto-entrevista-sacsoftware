@@ -91,3 +91,7 @@ Route::post('/recision/guardar',[RecesionController::class,'guardarBio']);
 Route::get('/recision/{detallesbio}',[RecesionController::class,'detallesbio']);
 
 
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
