@@ -26,7 +26,7 @@ Route::get('/', function () {
 
 // mis vistas personales
 // vista llamando controlador para panel administrativo
-Route::get('/admin', AdminController::class);
+Route::get('/admin', AdminController::class)->name('dashboard');
 //llamdando controlador para proveedores
 Route::get('/proveedores',[ProveedoresController::class,'index']);
 //llamando controlador para crear proveedor
