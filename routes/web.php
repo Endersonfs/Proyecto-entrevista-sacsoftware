@@ -28,17 +28,17 @@ Route::get('/', function () {
 // vista llamando controlador para panel administrativo
 Route::get('/admin', AdminController::class)->name('dashboard');
 //llamdando controlador para proveedores
-Route::get('/proveedores',[ProveedoresController::class,'index']);
+Route::get('/proveedores',[ProveedoresController::class,'index'])->name('proveedores.index');
 //llamando controlador para crear proveedor
-Route::get('/proveedores/create', [ProveedoresController::class,'create']);
+Route::get('/proveedores/create', [ProveedoresController::class,'create'])->name('proveedores.create');
 
 //llamando controlador para proveedor especifico
 Route::get('/proveedores/{proveedor}',[ProveedoresController::class,'show']);
 
 //llamando controlador para catalogo - creando rutas
-Route::get('/catalogo',[CatalogoCuentaController::class,'index']);
+Route::get('/catalogo',[CatalogoCuentaController::class,'index'])->name('catalogo.index');
 //catalogo - activos
-Route::get('/catalogo/activos',[CatalogoCuentaController::class,'activos']);
+Route::get('/catalogo/activos',[CatalogoCuentaController::class,'activos'])->name('catalogo.activos');;
 Route::get('/catalogo/ac',[CatalogoCuentaController::class,'ac']);
 Route::get('/catalogo/aceb',[CatalogoCuentaController::class,'aceb']);
 Route::get('/catalogo/accg',[CatalogoCuentaController::class,'accg']);
@@ -74,21 +74,21 @@ Route::get('/asientos/lista',[AsientoController::class,'lista']);
 Route::post('/asientos/crear',[AsientoController::class,'crear']);
 
 //Inventario -
-Route::get('/inventario/lista',[InventarioController::class,'index']);
-Route::get('/inventario/listaregistro',[InventarioController::class,'listaregistro']);
-Route::get('/inventario/agregar',[InventarioController::class,'agregar']);
-Route::post('inventario/guardar',[InventarioController::class,'guardarRegistro']);
+Route::get('/inventario/lista',[InventarioController::class,'index'])->name('inventario.list');;
+Route::get('/inventario/listaregistro',[InventarioController::class,'listaregistro'])->name('inventario.listaregistro');
+Route::get('/inventario/agregar',[InventarioController::class,'agregar'])->name('inventario.agregar');;
+Route::post('inventario/guardar',[InventarioController::class,'guardarRegistro'])->name('inventario.guardar');
 
 // Balance financiero
 Route::get('/balancefinanciero/bcomprobacion',[BalanceFinancieroController::class,'balanceComprobacion']);
 
-//Recion
-Route::get('/recision/crear',[RecesionController::class,'create']);
-Route::get('/recision/lista',[RecesionController::class, 'lista']);
-Route::get('/recision/listaopcion',[RecesionController::class,'listaopcion']);
-Route::get('/recision/bio',[RecesionController::class,'crearbio']);
-Route::post('/recision/guardar',[RecesionController::class,'guardarBio']);
-Route::get('/recision/{detallesbio}',[RecesionController::class,'detallesbio']);
+//Recepcion
+Route::get('/recision/crear',[RecesionController::class,'create'])->name('recepcion.crear');
+Route::get('/recision/lista',[RecesionController::class, 'lista'])->name('recepcion.lista');
+Route::get('/recision/listaopcion',[RecesionController::class,'listaopcion'])->recepcion('recepcion.listaopciones');
+Route::get('/recision/bio',[RecesionController::class,'crearbio'])->name('recepcion.bio');
+Route::post('/recision/guardar',[RecesionController::class,'guardarBio'])->name('recepcion.guardar');;
+Route::get('/recision/{detallesbio}',[RecesionController::class,'detallesbio'])->name('recepcion.verdetalles');
 
 
 
