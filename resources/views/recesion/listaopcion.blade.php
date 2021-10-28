@@ -7,7 +7,7 @@
         <div class="page-inner">    
             <!-- Customized Card -->
             <div class="page-header">
-                <h4 class="page-title">Recesion</h4>
+                <h4 class="page-title">Recepción</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
                         <a href="#">

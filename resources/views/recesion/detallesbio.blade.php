@@ -6,7 +6,7 @@
 <div class="content">
     <div class="page-inner">
         <div class="page-header">
-            <h4 class="page-title">Recesión </h4>
+            <h4 class="page-title">Recepción </h4>
             <ul class="breadcrumbs">
                 <li class="nav-home">
                     <a href="#">
@@ -151,7 +151,7 @@
                                 </td>
                             </tr>
                         </tbody></table>
-                        <button type="button" class="btn btn-success" id="alert_demo_8">Facturar</button>		
+                        <a class="btn btn-success" id="alert_demo_8" href="{{route('facturar.index')}}">Facturar</a>		
                         <button type="button" class="btn btn-success" id="alert_demo_8">Imprimir</button>		
                         <button type="button" class="btn btn-success" id="alert_demo_8">Editar</button>		
                     </div>

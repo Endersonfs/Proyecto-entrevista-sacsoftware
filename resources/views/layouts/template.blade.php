@@ -263,8 +263,8 @@
 										<div class="user-box">
 											<div class="avatar-lg"><img src="../assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
 											<div class="u-text">
-												<h4>Felix Padilla</h4>
-												<p class="text-muted">info@example.com</p><a href="profile.html" class="btn btn-xs btn-secondary btn-sm">Ver perfil</a>
+												<h4>{{ Auth::user()->name }}</h4>
+												<p class="text-muted">{{ Auth::user()->email }}</p><a href="profile.html" class="btn btn-xs btn-secondary btn-sm">Ver perfil</a>
 											</div>
 										</div>
 									</li>
@@ -274,7 +274,10 @@
 										<div class="dropdown-divider"></div>
 										<a class="dropdown-item" href="#">Configuracion de cuenta</a>
 										<div class="dropdown-divider"></div>
-										<a class="dropdown-item" href="#">Cerrar sesión</a>
+										<form method="POST" action="{{ route('logout') }}">
+											@csrf											
+											<button class="dropdown-item" action="{{route('logout')}}">Cerrar sesión</button>
+										</form>
 									</li>
 								</div>
 							</ul>
@@ -296,7 +299,7 @@
 						<div class="info">
 							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 								<span>
-									Felix Padilla
+									{{ Auth::user()->name }}
 									<span class="user-level">Administrador</span>
 									{{-- <span class="caret"></span> --}}
 								</span>
@@ -352,6 +355,7 @@
 							</span>
 							<h4 class="text-section">Secciones</h4>
 						</li>
+						@can('estadofinanciero.balancegeneral')	
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#base">
 								<i class="fas fa-layer-group"></i>
@@ -433,6 +437,10 @@
 								</ul>
 							</div>
 						</li>
+						@endcan
+						{{-- final de estado financiero --}}
+						@can('proveedores.index')					
+						
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#sidebarLayouts">
 								<i class="fas fa-th-list"></i>
@@ -469,6 +477,8 @@
 								</ul>
 							</div>
 						</li>
+						@endcan
+						@can('catalogo.index')
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#forms">
 								<i class="fas fa-pen-square"></i>
@@ -495,6 +505,8 @@
 								</ul>
 							</div>
 						</li>
+						@endcan
+						@can('asientos.index')
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#asiento">
 								<i class="fas fa-clipboard-list"></i>
@@ -516,6 +528,8 @@
 								</ul>
 							</div>
 						</li>
+						@endcan
+						@can('tareas.index')
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#tables">
 								<i class="fas fa-table"></i>
@@ -537,6 +551,8 @@
 								</ul>
 							</div>
 						</li>
+						@endcan
+						@can('recepcion.index')
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#recesion">
 								<i class="fas fa-book"></i>
@@ -558,6 +574,8 @@
 								</ul>
 							</div>
 						</li>
+						@endcan
+						@can('inventario.index')
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#inventario">
 								<i class="fas fa-box-open"></i>
@@ -580,114 +598,20 @@
 										<a href="/inventario/listaregistro">
 											<span class="sub-item">Registros</span>
 										</a>
-									</li>
-									{{-- <li>
-										<a href="tables/datatables.html">
-											<span class="sub-item">Datatables</span>
-										</a>
-									</li> --}}
+									</li>									
 								</ul>
 							</div>
 						</li>
-						{{-- <li class="nav-item">
-							<a data-toggle="collapse" href="#maps">
-								<i class="fas fa-map-marker-alt"></i>
-								<p>Maps</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="maps">
-								<ul class="nav nav-collapse">
-									<li>
-										<a href="maps/jqvmap.html">
-											<span class="sub-item">JQVMap</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li> --}}
-						
+						@endcan
+						@can('reporte.index')
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#reporte">
 								<i class="far fa-chart-bar"></i>
-								<p>Reporte</p>
-								{{-- <span class="caret"></span> --}}
-							</a>
-							{{-- <div class="collapse" id="charts">
-								<ul class="nav nav-collapse">
-									<li>
-										<a href="charts/charts.html">
-											<span class="sub-item">Chart Js</span>
-										</a>
-									</li>
-									<li>
-										<a href="charts/sparkline.html">
-											<span class="sub-item">Sparkline</span>
-										</a>
-									</li>
-								</ul>
-							</div> --}}
+								<p>Reporte</p>								
+							</a>							
 						</li>
-						{{-- <li class="nav-item">
-							<a href="widgets.html">
-								<i class="fas fa-desktop"></i>
-								<p>Widgets</p>
-								<span class="badge badge-success">4</span>
-							</a>
-						</li> --}}
-						{{-- <li class="nav-item">
-							<a data-toggle="collapse" href="#submenu">
-								<i class="fas fa-bars"></i>
-								<p>Menu Levels</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="submenu">
-								<ul class="nav nav-collapse">
-									<li>
-										<a data-toggle="collapse" href="#subnav1">
-											<span class="sub-item">Level 1</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse" id="subnav1">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="#">
-														<span class="sub-item">Level 2</span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="sub-item">Level 2</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-									<li>
-										<a data-toggle="collapse" href="#subnav2">
-											<span class="sub-item">Level 1</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse" id="subnav2">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="#">
-														<span class="sub-item">Level 2</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-									<li>
-										<a href="#">
-											<span class="sub-item">Level 1</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li> --}}
-						{{-- <li class="mx-4 mt-2">
-							<a href="http://themekita.com/atlantis-bootstrap-dashboard.html" class="btn btn-primary btn-block"><span class="btn-label mr-2"> <i class="fa fa-heart"></i> </span>Buy Pro</a> 
-						</li> --}}
+						@endcan
+						
 					</ul>
 				</div>
 			</div>

@@ -26,14 +26,25 @@ class RolSeeder extends Seeder
         $rolDeveloper = Role::create(['name' => 'Developer']);
 
         //crando permisos
-        Permission::create(['name' => 'admin.index']);
-        Permission::create(['name' => 'contabilidad.index']);
-        Permission::create(['name' => 'recepcion.index']);
-        Permission::create(['name' => 'mensajero.index']);
-        Permission::create(['name' => 'doctor.index']);
-        Permission::create(['name' => 'asistente.index']);
-        Permission::create(['name' => 'secretaria.index']);
-        Permission::create(['name' => 'developer.index']);
+        Permission::create(['name' => 'admin.index'])->syncRoles($rolAdministrador,$rolContabilidad,$rolRecpcion,$rolMensajero,$rolDoctor,$rolAsistentes, $rolSecretaria,$rolDeveloper);
+        Permission::create(['name' => 'contabilidad.index'])->syncRoles($rolDeveloper,$rolAdministrador);
+
+        Permission::create(['name' => 'mensajero.index'])->syncRoles($rolDeveloper,$rolAdministrador);
+        Permission::create(['name' => 'doctor.index'])->syncRoles($rolDeveloper,$rolAdministrador);
+        Permission::create(['name' => 'asistente.index'])->syncRoles($rolDeveloper,$rolAdministrador);
+        Permission::create(['name' => 'secretaria.index'])->syncRoles($rolDeveloper,$rolAdministrador);
+        Permission::create(['name' => 'developer.index'])->syncRoles($rolDeveloper,$rolAdministrador);
+        //Permisos a los Menu
+        Permission::create(['name'=>'estadofinanciero.balancegeneral'])->syncRoles($rolDeveloper,$rolAdministrador,$rolContabilidad);
+        Permission::create(['name'=>'proveedores.index'])->syncRoles($rolDeveloper,$rolAdministrador,$rolContabilidad,$rolRecpcion);
+        Permission::create(['name'=>'catalogo.index'])->syncRoles($rolDeveloper,$rolAdministrador,$rolContabilidad);
+        Permission::create(['name'=>'asientos.index'])->syncRoles($rolDeveloper,$rolAdministrador,$rolContabilidad);
+        Permission::create(['name'=>'tareas.index'])->syncRoles($rolSecretaria,$rolAsistentes,$rolDoctor,$rolMensajero,$rolRecpcion,$rolDeveloper,$rolAdministrador,$rolAdministrador,$rolContabilidad,$rolRecpcion,$rolMensajero,$rolDoctor,$rolAsistentes, $rolSecretaria,$rolDeveloper);
+        Permission::create(['name'=>'recepcion.index'])->syncRoles($rolSecretaria,$rolAsistentes,$rolDeveloper,$rolAdministrador,$rolRecpcion);
+        Permission::create(['name'=>'inventario.index'])->syncRoles($rolDeveloper,$rolAdministrador,$rolContabilidad);
+        Permission::create(['name'=>'reporte.index'])->syncRoles($rolDeveloper,$rolAdministrador);
+
+
         //Roles
         // Nos quedamos en el video 2 por el minituo 10:50
     }
