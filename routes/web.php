@@ -24,87 +24,88 @@ use App\Http\Controllers\FacturarController;
 // Route::middleware(['auth:sanctum', 'verified'])->get('/', function () {
 //     return view('welcome');
 // })->name('dashboard');
-Route::middleware(['auth:sanctum', 'verified'])->get('/', AdminController::class)->name('dashboard');
+Route::get('/', AdminController::class)->name('dashboard')->middleware('auth');
 
 // mis vistas personales
 // vista llamando controlador para panel administrativo
-Route::middleware(['auth:sanctum', 'verified'])->get('/admin', AdminController::class)->name('dashboard');
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', AdminController::class)->name('dashboard');
+Route::get('/admin', AdminController::class)->name('dashboard')->middleware('auth');
+Route::get('/dashboard', AdminController::class)->name('dashboard')->middleware('auth');
 
 //llamdando controlador para proveedores
-Route::middleware(['auth:sanctum', 'verified'])->get('/proveedores',[ProveedoresController::class,'index'])->name('proveedores.index');
+Route::get('/proveedores',[ProveedoresController::class,'index'])->name('proveedores.index')->middleware('auth');
 //llamando controlador para crear proveedor
-Route::middleware(['auth:sanctum', 'verified'])->get('/proveedores/create', [ProveedoresController::class,'create'])->name('proveedores.create');
+Route::get('/proveedores/create', [ProveedoresController::class,'create'])->name('proveedores.create')->middleware('auth');
 
 //llamando controlador para proveedor especifico
-Route::middleware(['auth:sanctum', 'verified'])->get('/proveedores/{proveedor}',[ProveedoresController::class,'show']);
+Route::get('/proveedores/{proveedor}',[ProveedoresController::class,'show'])->middleware('auth');
 
 //llamando controlador para catalogo - creando rutas
-Route::middleware(['auth:sanctum', 'verified'])->get('/catalogo',[CatalogoCuentaController::class,'index'])->name('catalogo.index');
+Route::get('/catalogo',[CatalogoCuentaController::class,'index'])->name('catalogo.index')->middleware('auth');
 //catalogo - activos
-Route::middleware(['auth:sanctum', 'verified'])->get('/catalogo/activos',[CatalogoCuentaController::class,'activos'])->name('catalogo.activos');
-Route::middleware(['auth:sanctum', 'verified'])->get('/catalogo/ac',[CatalogoCuentaController::class,'ac']);
-Route::middleware(['auth:sanctum', 'verified'])->get('/catalogo/aceb',[CatalogoCuentaController::class,'aceb']);
-Route::middleware(['auth:sanctum', 'verified'])->get('/catalogo/accg',[CatalogoCuentaController::class,'accg']);
-Route::middleware(['auth:sanctum', 'verified'])->get('/catalogo/acb',[CatalogoCuentaController::class,'acb']);
-Route::middleware(['auth:sanctum', 'verified'])->get('/catalogo/accc',[CatalogoCuentaController::class,'accc']);
-Route::middleware(['auth:sanctum', 'verified'])->get('/catalogo/aci',[CatalogoCuentaController::class,'aci']);
+Route::get('/catalogo/activos',[CatalogoCuentaController::class,'activos'])->name('catalogo.activos')->middleware('auth');
+Route::get('/catalogo/ac',[CatalogoCuentaController::class,'ac'])->middleware('auth');
+Route::get('/catalogo/aceb',[CatalogoCuentaController::class,'aceb'])->middleware('auth');
+Route::get('/catalogo/accg',[CatalogoCuentaController::class,'accg'])->middleware('auth');
+Route::get('/catalogo/acb',[CatalogoCuentaController::class,'acb'])->middleware('auth');
+Route::get('/catalogo/accc',[CatalogoCuentaController::class,'accc'])->middleware('auth');
+Route::get('/catalogo/aci',[CatalogoCuentaController::class,'aci'])->middleware('auth');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/catalogo/adg',[CatalogoCuentaController::class,'adg']);
-Route::middleware(['auth:sanctum', 'verified'])->get('/catalogo/adgs',[CatalogoCuentaController::class,'adgs']);
-Route::middleware(['auth:sanctum', 'verified'])->get('/catalogo/adgc',[CatalogoCuentaController::class,'adgc']);
-Route::middleware(['auth:sanctum', 'verified'])->get('/catalogo/adgd',[CatalogoCuentaController::class,'adgd']);
+Route::get('/catalogo/adg',[CatalogoCuentaController::class,'adg'])->middleware('auth');
+Route::get('/catalogo/adgs',[CatalogoCuentaController::class,'adgs'])->middleware('auth');
+Route::get('/catalogo/adgc',[CatalogoCuentaController::class,'adgc'])->middleware('auth');
+Route::get('/catalogo/adgd',[CatalogoCuentaController::class,'adgd'])->middleware('auth');
 
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/catalogo/af',[CatalogoCuentaController::class,'af']);
-Route::middleware(['auth:sanctum', 'verified'])->get('/catalogo/ad',[CatalogoCuentaController::class,'ad']);
+Route::get('/catalogo/af',[CatalogoCuentaController::class,'af'])->middleware('auth');
+Route::get('/catalogo/ad',[CatalogoCuentaController::class,'ad'])->middleware('auth');
 
 //catalogo - pasivos
-Route::middleware(['auth:sanctum', 'verified'])->get('/catalogo/pasivos',[CatalogoCuentaController::class,'pasivos']);
-Route::middleware(['auth:sanctum', 'verified'])->get('/catalogo/pc',[CatalogoCuentaController::class,'pc']);
-Route::middleware(['auth:sanctum', 'verified'])->get('/catalogo/pcpc',[CatalogoCuentaController::class,'pcpc']);
-Route::middleware(['auth:sanctum', 'verified'])->get('/catalogo/pcpcd',[CatalogoCuentaController::class,'pcpcd']);
-Route::middleware(['auth:sanctum', 'verified'])->get('/catalogo/pcpcdd',[CatalogoCuentaController::class,'pcpcdd']);
-Route::middleware(['auth:sanctum', 'verified'])->get('/catalogo/pcpcdr',[CatalogoCuentaController::class,'pcpcdr']);
+Route::get('/catalogo/pasivos',[CatalogoCuentaController::class,'pasivos'])->middleware('auth');
+Route::get('/catalogo/pc',[CatalogoCuentaController::class,'pc'])->middleware('auth');
+Route::get('/catalogo/pcpc',[CatalogoCuentaController::class,'pcpc'])->middleware('auth');
+Route::get('/catalogo/pcpcd',[CatalogoCuentaController::class,'pcpcd'])->middleware('auth');
+Route::get('/catalogo/pcpcdd',[CatalogoCuentaController::class,'pcpcdd'])->middleware('auth');
+Route::get('/catalogo/pcpcdr',[CatalogoCuentaController::class,'pcpcdr'])->middleware('auth');
 
 //catalogo - catipal
-Route::middleware(['auth:sanctum', 'verified'])->get('/catalogo/capital',[CatalogoCuentaController::class,'capital']);
-Route::middleware(['auth:sanctum', 'verified'])->get('/catalogo/cc',[CatalogoCuentaController::class,'cc']);
-Route::middleware(['auth:sanctum', 'verified'])->get('/catalogo/ce',[CatalogoCuentaController::class,'ce']);
+Route::get('/catalogo/capital',[CatalogoCuentaController::class,'capital'])->middleware('auth');
+Route::get('/catalogo/cc',[CatalogoCuentaController::class,'cc'])->middleware('auth');
+Route::get('/catalogo/ce',[CatalogoCuentaController::class,'ce'])->middleware('auth');
 
 //asiento -
-Route::middleware(['auth:sanctum', 'verified'])->get('/asientos',[AsientoController::class,'asientos.index'])->name('asientos.index');
-Route::middleware(['auth:sanctum', 'verified'])->get('/asientos/formulario',[AsientoController::class,'formulario'])->name('asientos.formulario');
-Route::middleware(['auth:sanctum', 'verified'])->get('/asientos/lista',[AsientoController::class,'lista'])->name('asientos.lista');
-Route::middleware(['auth:sanctum', 'verified'])->post('/asientos/crear',[AsientoController::class,'crear'])->name('asientos.crear');
+Route::get('/asientos',[AsientoController::class,'asientos.index'])->name('asientos.index')->middleware('auth');
+Route::get('/asientos/formulario',[AsientoController::class,'formulario'])->name('asientos.formulario')->middleware('auth');
+Route::get('/asientos/lista',[AsientoController::class,'lista'])->name('asientos.lista')->middleware('auth');
+Route::post('/asientos/crear',[AsientoController::class,'crear'])->name('asientos.crear')->middleware('auth');
 
 //Inventario -
-Route::middleware(['auth:sanctum', 'verified'])->get('/inventario/lista',[InventarioController::class,'index'])->name('inventario.list');
-Route::middleware(['auth:sanctum', 'verified'])->get('/inventario/listaregistro',[InventarioController::class,'listaregistro'])->name('inventario.listaregistro');
-Route::middleware(['auth:sanctum', 'verified'])->get('/inventario/agregar',[InventarioController::class,'agregar'])->name('inventario.agregar');
-Route::middleware(['auth:sanctum', 'verified'])->post('inventario/guardar',[InventarioController::class,'guardarRegistro'])->name('inventario.guardar');
+Route::get('/inventario/lista',[InventarioController::class,'index'])->name('inventario.list')->middleware('auth');
+Route::get('/inventario/listaregistro',[InventarioController::class,'listaregistro'])->name('inventario.listaregistro')->middleware('auth');
+Route::get('/inventario/agregar',[InventarioController::class,'agregar'])->name('inventario.agregar')->middleware('auth');
+Route::post('inventario/guardar',[InventarioController::class,'guardarRegistro'])->name('inventario.guardar')->middleware('auth');
 
 // Balance financiero
-Route::middleware(['auth:sanctum', 'verified'])->get('/balancefinanciero/bcomprobacion',[BalanceFinancieroController::class,'balanceComprobacion']);
+Route::get('/balancefinanciero/bcomprobacion',[BalanceFinancieroController::class,'balanceComprobacion'])->middleware('auth');
 
 //Recepcion
-Route::middleware(['auth:sanctum', 'verified'])->get('/recision/crear',[RecesionController::class,'create'])->name('recepcion.crear');
-Route::middleware(['auth:sanctum', 'verified'])->get('/recision/lista',[RecesionController::class, 'lista'])->name('recepcion.lista');
-Route::middleware(['auth:sanctum', 'verified'])->get('/recision/listaopcion',[RecesionController::class,'listaopcion'])->name('recepcion.listaopciones');
-Route::middleware(['auth:sanctum', 'verified'])->get('/recision/bio',[RecesionController::class,'crearbio'])->name('recepcion.bio');
-Route::middleware(['auth:sanctum', 'verified'])->post('/recision/guardar',[RecesionController::class,'guardarBio'])->name('recepcion.guardar');
-Route::middleware(['auth:sanctum', 'verified'])->get('/recision/{detallesbio}',[RecesionController::class,'detallesbio'])->name('recepcion.verdetalles');
+Route::get('/recepcion/crear',[RecesionController::class,'create'])->middleware('auth');
+///Route::get('/recepcion/crear',[RecesionController::class,'create'])->name('recepcion.crear');
+Route::get('/recision/lista',[RecesionController::class, 'lista'])->name('recepcion.lista')->middleware('auth');
+Route::get('/recision/listaopcion',[RecesionController::class,'listaopcion'])->name('recepcion.listaopciones')->middleware('auth');
+Route::get('/recision/bio',[RecesionController::class,'crearbio'])->name('recepcion.bio')->middleware('auth');
+Route::post('/recision/guardar',[RecesionController::class,'guardarBio'])->name('recepcion.guardar')->middleware('auth');
+Route::get('/recision/{detallesbio}',[RecesionController::class,'detallesbio'])->name('recepcion.verdetalles')->middleware('auth');
 
 // estados financieros -> realizar controlador
-Route::middleware(['auth:sanctum', 'verified'])->get('/estadofinaciero/balancegeneral',[EstadoFinanciero::class,'balanceGeneral'])->name('estadofinanciero.balancegeneral');
+Route::get('/estadofinaciero/balancegeneral',[EstadoFinanciero::class,'balanceGeneral'])->name('estadofinanciero.balancegeneral')->middleware('auth');
 //tareas -> realizar controlador
-Route::middleware(['auth:sanctum', 'verified'])->get('/tareas',[Tareas::class,'lista'])->name('tareas.index');
+Route::get('/tareas',[Tareas::class,'lista'])->name('tareas.index');
 
 // facturacion
-Route::middleware(['auth:sanctum', 'verified'])->get('/facturar',[FacturarController::class,'index'])->name('facturar.index');
-Route::middleware(['auth:sanctum', 'verified'])->get('/facturar/opciones',[FacturarController::class,'index'])->name('facturar.tipo');
-Route::middleware(['auth:sanctum', 'verified'])->get('/facturar/privada',[FacturarController::class,'privado'])->name('facturar.privado');
-Route::middleware(['auth:sanctum', 'verified'])->get('/facturar/asegurado',[FacturarController::class,'asegurado'])->name('facturar.asegurado');
+Route::get('/facturar',[FacturarController::class,'index'])->name('facturar.index')->middleware('auth');
+Route::get('/facturar/opciones',[FacturarController::class,'index'])->name('facturar.tipo')->middleware('auth');
+Route::get('/facturar/privada',[FacturarController::class,'privado'])->name('facturar.privado')->middleware('auth');
+Route::get('/facturar/asegurado',[FacturarController::class,'asegurado'])->name('facturar.asegurado')->middleware('auth');
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('/dashboard');

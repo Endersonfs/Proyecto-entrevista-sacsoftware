@@ -12,7 +12,7 @@ class RecesionController extends Controller
     //controlador para recesion
     public function index(){}
     public function create(){
-        return view('recesion.create');
+        return view('recepcion.create');
     }
     public function lista(){
         $respuesta = Http::get('http://localhost/api-labopaes/recesion/biopsias');
