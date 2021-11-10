@@ -9,6 +9,7 @@ use App\Http\Controllers\InventarioController;
 use App\Http\Controllers\BalanceFinancieroController;
 use App\Http\Controllers\RecesionController;
 use App\Http\Controllers\FacturarController;
+use App\Http\Controllers\ReporteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -88,13 +89,13 @@ Route::post('inventario/guardar',[InventarioController::class,'guardarRegistro']
 Route::get('/balancefinanciero/bcomprobacion',[BalanceFinancieroController::class,'balanceComprobacion'])->middleware('auth');
 
 //Recepcion
-Route::get('/recepcion/crear',[RecesionController::class,'create'])->middleware('auth');
+Route::get('/recepcion/crear',[RecesionController::class,'create'])->name('recepcion.crear')->middleware('auth');
 ///Route::get('/recepcion/crear',[RecesionController::class,'create'])->name('recepcion.crear');
-Route::get('/recision/lista',[RecesionController::class, 'lista'])->name('recepcion.lista')->middleware('auth');
-Route::get('/recision/listaopcion',[RecesionController::class,'listaopcion'])->name('recepcion.listaopciones')->middleware('auth');
-Route::get('/recision/bio',[RecesionController::class,'crearbio'])->name('recepcion.bio')->middleware('auth');
-Route::post('/recision/guardar',[RecesionController::class,'guardarBio'])->name('recepcion.guardar')->middleware('auth');
-Route::get('/recision/{detallesbio}',[RecesionController::class,'detallesbio'])->name('recepcion.verdetalles')->middleware('auth');
+Route::get('/recepcion/lista',[RecesionController::class, 'lista'])->name('recepcion.lista')->middleware('auth');
+Route::get('/recepcion/listaopcion',[RecesionController::class,'listaopcion'])->name('recepcion.listaopciones')->middleware('auth');
+Route::get('/recepcion/bio',[RecesionController::class,'crearbio'])->name('recepcion.bio')->middleware('auth');
+Route::post('/recepcion/guardar',[RecesionController::class,'guardarBio'])->name('recepcion.guardar')->middleware('auth');
+Route::get('/recepcion/{detallesbio}',[RecesionController::class,'detallesbio'])->name('recepcion.verdetalles')->middleware('auth');
 
 // estados financieros -> realizar controlador
 Route::get('/estadofinaciero/balancegeneral',[EstadoFinanciero::class,'balanceGeneral'])->name('estadofinanciero.balancegeneral')->middleware('auth');
@@ -106,6 +107,11 @@ Route::get('/facturar',[FacturarController::class,'index'])->name('facturar.inde
 Route::get('/facturar/opciones',[FacturarController::class,'index'])->name('facturar.tipo')->middleware('auth');
 Route::get('/facturar/privada',[FacturarController::class,'privado'])->name('facturar.privado')->middleware('auth');
 Route::get('/facturar/asegurado',[FacturarController::class,'asegurado'])->name('facturar.asegurado')->middleware('auth');
+
+// Reporte
+Route::get('/reporte/pagosarsexcel',[ReporteController::class,'reportePagoARSExcel'])->name('reporte.pagosarsexcel')->middleware('auth');
+Route::get('/reporte/pagosarsexcelform',[ReporteController::class,'reportePagoARSExcelForm'])->name('reporte.pagosarsexcel.form')->middleware('auth');;
+Route::post('/reporte/pagosimportexcelform',[ReporteController::class,'reportePagoARSExcelImport'])->name('reporte.pagosarsexcel.import')->middleware('auth');;
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('/dashboard');

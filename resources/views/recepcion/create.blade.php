@@ -31,7 +31,7 @@
                             <div class="card-desc">
                                 Lista de registros de LP
                             </div>
-                            <a href="/recision/bio">
+                            <a href="{{route('recepcion.bio')}}">
                             <div class="card-detail">
                                 <div class="btn btn-light btn-rounded">Agregar</div>
                             </div>

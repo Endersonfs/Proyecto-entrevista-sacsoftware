@@ -18,10 +18,10 @@ class RecesionController extends Controller
         $respuesta = Http::get('http://localhost/api-labopaes/recesion/biopsias');
         
         $listado = $respuesta->json();
-        return view('recesion.lista',compact(['listado']));
+        return view('recepcion.lista',compact(['listado']));
     }
     public function listaopcion(){        
-        return view('recesion.listaopcion');
+        return view('recepcion.listaopcion');
     }    
     public function crearbio(){
         $respuesta = Http::get('http://localhost/api-labopaes/proveedores');
@@ -32,7 +32,7 @@ class RecesionController extends Controller
         $listadotop =$respuestatop->json();
         $listadatosbio = $respuestadatosbio->json();
         
-        return view('recesion.createbio',compact(['listado','listadotop','listadatosbio']));
+        return view('recepcion.createbio',compact(['listado','listadotop','listadatosbio']));
     } 
     public function guardarBio(Request $request){ 
                
@@ -79,12 +79,12 @@ class RecesionController extends Controller
 
 
         $Recesion -> save();
-        return view('recesion.create');
+        return view('recepcion.create');
     }
     public function detallesbio($detalle){   
         $var = $detalle;     
         $respuesta = Http::get('http://localhost/api-labopaes/recesion/biopsiasd?detalle='.$var.'');
         $listado = $respuesta->json();
-        return view('recesion.detallesbio',compact('listado'));
+        return view('recepcion.detallesbio',compact('listado'));
     }   
 }

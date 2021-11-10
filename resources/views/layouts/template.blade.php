@@ -562,12 +562,12 @@
 							<div class="collapse" id="recesion">
 								<ul class="nav nav-collapse">
 									<li>
-										<a href="/recision/crear">
+										<a href="{{route('recepcion.crear')}}">
 											<span class="sub-item">Agregar Nuevo</span>
 										</a>
 									</li>
 									<li>
-										<a href="/recision/listaopcion">
+										<a href="{{route('recepcion.listaopciones')}}">
 											<span class="sub-item">Listado</span>
 										</a>
 									</li>
@@ -604,11 +604,27 @@
 						</li>
 						@endcan
 						@can('reporte.index')
-						<li class="nav-item">
+						{{-- <li class="nav-item">
 							<a data-toggle="collapse" href="#reporte">
 								<i class="far fa-chart-bar"></i>
 								<p>Reporte</p>								
 							</a>							
+						</li> --}}
+						<li class="nav-item">
+							<a data-toggle="collapse" href="#reporte">
+								<i class="far fa-chart-bar"></i>
+								<p>Reporte </p>
+								<span class="caret"></span>
+							</a>
+							<div class="collapse" id="reporte">
+								<ul class="nav nav-collapse">
+									<li>
+										<a href="{{route('reporte.pagosarsexcel')}}">
+											<span class="sub-item">Pagos ARS</span>
+										</a>
+									</li>																	
+								</ul>
+							</div>
 						</li>
 						@endcan
 						
