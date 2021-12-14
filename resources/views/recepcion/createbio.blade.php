@@ -271,15 +271,15 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        {{-- <div class="col">
-                                            {{-- fecha de recepcion --
+                                        <div class="col">
+                                            {{-- fecha de recepcion --}}
                                             <div class="form-group">
                                                 <label for="email2">Fecha de Recepcion</label>
                                                 <div class="input-group mb-3">                                                        
-                                                    <input type="date" class="form-control" aria-label="Amount (to the nearest dollar)" name="monto">
+                                                    <input type="date" class="form-control" aria-label="Amount (to the nearest dollar)" name="fechaRegistro">
                                                 </div>
                                             </div>
-                                        </div> --}}
+                                        </div>
                                         <div class="col">
                                             {{-- fecha de entrega --}}
                                             <div class="form-group">

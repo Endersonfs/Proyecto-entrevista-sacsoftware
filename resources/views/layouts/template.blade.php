@@ -31,7 +31,7 @@
 			<!-- Logo Header -->
 			<div class="logo-header" data-background-color="blue">
 				
-				<a href="./admin" class="logo">
+				<a href="{{route("dashboard")}}" class="logo">
 					<img src="../assets/img/logo-white.png" alt="navbar brand" class="navbar-brand">
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -329,7 +329,7 @@
 					</div>
 					<ul class="nav nav-primary">
 						<li class="nav-item active">
-							<a href="./admin" class="collapsed" aria-expanded="false">
+							<a href="{{route("dashboard")}}" class="collapsed" aria-expanded="false">
 								<i class="fas fa-home"></i>
 								<p>Panel principal</p>
 								{{-- <span class="caret"></span> --}}
@@ -554,12 +554,12 @@
 						@endcan
 						@can('recepcion.index')
 						<li class="nav-item">
-							<a data-toggle="collapse" href="#recesion">
+							<a data-toggle="collapse" href="#recepcion">
 								<i class="fas fa-book"></i>
 								<p>Recepción </p>
 								<span class="caret"></span>
 							</a>
-							<div class="collapse" id="recesion">
+							<div class="collapse" id="recepcion">
 								<ul class="nav nav-collapse">
 									<li>
 										<a href="{{route('recepcion.crear')}}">
@@ -569,6 +569,29 @@
 									<li>
 										<a href="{{route('recepcion.listaopciones')}}">
 											<span class="sub-item">Listado</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						@endcan
+						@can('recepcion.index')
+						<li class="nav-item">
+							<a data-toggle="collapse" href="#facturar">
+								<i class="fas fa-book"></i>
+								<p>Facturación </p>
+								<span class="caret"></span>
+							</a>
+							<div class="collapse" id="facturar">
+								<ul class="nav nav-collapse">
+									<li>
+										<a href="{{route('facturar.index')}}">
+											<span class="sub-item">Facturar</span>
+										</a>
+									</li>
+									<li>
+										<a href="{{route('facturar.index')}}">
+											<span class="sub-item">Listado facturados</span>
 										</a>
 									</li>
 								</ul>

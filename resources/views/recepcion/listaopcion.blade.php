@@ -31,7 +31,7 @@
                             <div class="card-desc">
                                 Lista de registros de LP
                             </div>
-                            <a href="/recision/lista">
+                            <a href="{{route('recepcion.lista')}}">
                             <div class="card-detail">
                                 <div class="btn btn-light btn-rounded">Ver Lista</div>
                             </div>

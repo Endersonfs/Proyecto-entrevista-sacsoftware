@@ -72,17 +72,16 @@ class RecesionController extends Controller
         $Recesion->Muestra_de = $request->muestrade;
         $Recesion->Fecha_Muestra = $request->fecham;
         $Recesion->Fecha_entrega = $request->fechaentrega;
+        $Recesion->Fecha_Registro = $request->fechaRegistro;
         $Recesion->Descripcion_Macroscopica = $request->dmacro;
         $Recesion->Diagnosticos_histopatologico = $request->dhist;
         $Recesion->numeroDeCaso = $request->codigoCaso;
 
-
-
         $Recesion -> save();
         return view('recepcion.create');
     }
-    public function detallesbio($detalle){   
-        $var = $detalle;     
+    public function detallesbio($detallesbio){   
+        $var = $detallesbio;     
         $respuesta = Http::get('http://localhost/api-labopaes/recesion/biopsiasd?detalle='.$var.'');
         $listado = $respuesta->json();
         return view('recepcion.detallesbio',compact('listado'));

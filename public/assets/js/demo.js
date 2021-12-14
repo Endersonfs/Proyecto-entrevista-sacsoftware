@@ -14,12 +14,12 @@ Circles.create({
 	styleWrapper: true,
 	styleText:    true
 })
-
+var alerta ="<?php echo 'hola como estan'; ?>";
 //Notify
 $.notify({
 	icon: 'flaticon-alarm-1',
 	title: 'LABOPAES',
-	message: 'Bienvenido a tu plataforma',
+	message: alerta,
 },{
 	type: 'info',
 	placement: {

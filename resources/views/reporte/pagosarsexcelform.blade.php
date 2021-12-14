@@ -26,18 +26,18 @@
                 </li>
             </ul>
         </div>
-        <form method="POST" action="{{route('reporte.pagosarsexcel.import')}}" enctype="multipart/form-data">
+        <form method="POST" action="{{route('reporte.reclamacionesEnviadas.import')}}" enctype="multipart/form-data">
+        {{-- seguridad para formulario --}}
+        @csrf
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
                         <div class="card-header">
-                            <div class="card-title">Formulario Pagos ARS</div>
+                            <div class="card-title">Formulario Pagos ARS </div>
+                            @if (Session::has('message'))
+                                {{Session::get('message')}}                                                                    
+                             @endif
                         </div>
-                        {{-- seguridad para formulario --}}
-                        @csrf
-                        @if (Session::has('message'))
-                         <p>{{Session::get('message')}}</p>                            
-                        @endif
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-6 col-lg-6">
@@ -45,7 +45,7 @@
                                     
                                     {{-- fin edad y sexo --}}
                                     <div class="form-group">
-                                        <label for="password">Listado de Labopaes</label>
+                                        <label for="password">Reclamación Enviada a la ARS</label>
                                         <div class="form-group">
                                             <small id="emailHelp2" class="form-text text-muted"></small>
                                             <label for="email2">Excel</label>
@@ -53,7 +53,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon1"><div class="icon-preview"><i class="icon-doc"></i></div></span>
                                                 </div>
-                                                <input type="file" class="form-control" id="exampleFormControlSelect1" name="filelabopaes">  
+                                                <input type="file" class="form-control" id="exampleFormControlSelect1" name="filelabopaes" required>  
                                             </div>
                                         </div> 
                                     </div>
@@ -64,7 +64,7 @@
                                     
                                     {{-- fin edad y sexo --}}
                                     <div class="form-group">
-                                        <label for="password">Listado ARS</label>
+                                        <label for="password">Reporte de pago de la ARS</label>
                                         <div class="form-group">
                                             <small id="emailHelp2" class="form-text text-muted"></small>
                                             <label for="email2">Excel</label>
@@ -72,7 +72,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon1"><div class="icon-preview"><i class="icon-doc"></i></div></span>
                                                 </div>
-                                                <input type="file" class="form-control" id="exampleFormControlSelect1" name="telefono"> 
+                                                <input type="file" class="form-control" id="exampleFormControlSelect1" name="filears" required> 
                                             </div>
                                         </div> 
                                     </div>

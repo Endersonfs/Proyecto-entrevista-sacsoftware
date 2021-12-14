@@ -58,10 +58,50 @@
                                             <td>{{$asiento['Medico_Tratante']}}</td>
                                             <td>{{$asiento['Centro_Medico']}}</td>
                                             <td>LP-{{$asiento['ID_Biopsias']}}-21</td>
-                                            <td>{{$asiento['Estado']}}</td>
+                                            <td> 
+                                                @switch($asiento['Estado'])                                                
+                                                    @case("Completado")
+                                                        <div style="background: #21CB0C;padding: 5px 4px 5px 3px;border-radius: 3px;color: #fff;text-align: center;">
+                                                             {{$asiento['Estado']}}
+                                                        </div>
+                                                        @break
+                                                    @case("En Proceso")
+                                                        <div style="background: #F5B823;padding: 5px 4px 5px 3px;border-radius: 3px;color: #fff;text-align: center;">
+                                                            {{$asiento['Estado']}}
+                                                        </div>
+                                                         @break
+                                                    @case("Revisión")
+                                                        <div style="background: #8C0CCB;padding: 5px 4px 5px 3px;border-radius: 3px;color: #fff;text-align: center;">
+                                                            {{$asiento['Estado']}}
+                                                        </div>
+                                                         @break
+                                                    @case("Eliminado")
+                                                        <div style="background: #CB320C;padding: 5px 4px 5px 3px;border-radius: 3px;color: #fff;text-align: center;">
+                                                            {{$asiento['Estado']}}
+                                                        </div>
+                                                         @break
+                                                    @case("Cancelado")
+                                                        <div style="background: #CB320C;padding: 5px 4px 5px 3px;border-radius: 3px;color: #fff;text-align: center;">
+                                                            {{$asiento['Estado']}}
+                                                        </div>
+                                                         @break
+                                                    @case("Autorizado")
+                                                        <div style="background: #15EAEF;padding: 5px 4px 5px 3px;border-radius: 3px;color: #fff;text-align: center;">
+                                                            {{$asiento['Estado']}}
+                                                        </div>
+                                                         @break
+                                                    @case("Facturando")
+                                                        <div style="background: #000;padding: 5px 4px 5px 3px;border-radius: 3px;color: #fff;text-align: center;">
+                                                            {{$asiento['Estado']}}
+                                                        </div>
+                                                         @break
+                                                    @default
+                                                            {{-- Es el código que se ejecutará si no era ninguno de los estados anteriores. --}}
+                                                @endswitch                                                
+                                            </td>
                                             {{-- <td>{{$asiento['Fecha_Registro']}}</td> --}}
                                             <td>
-                                                <a href="/recision/{{$asiento['ID_Biopsias']}}" class="btn btn-primary" style="color:#fff ;margin: 2px;padding-left: 27px;">
+                                                <a href="/recepcion/{{$asiento['ID_Biopsias']}}" class="btn btn-primary" style="color:#fff ;margin: 2px;padding-left: 27px;">
                                                             <span class="btn-label">
                                                                 <i class="fa fa-info"></i>
                                                             </span>

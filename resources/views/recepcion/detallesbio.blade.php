@@ -71,11 +71,50 @@
                             <tr>
                                 <td class="fw-bold mb-1" style="width: 40%; vertical-align: middle;">Estado del caso</td>
                                 <td>
-                                    @if($bio['Estado'] == 'Completado')
+                                    @switch($bio['Estado'])                                                
+                                                    @case("Completado")
+                                                        <span style="background: #21CB0C;padding: 5px 4px 5px 3px;border-radius: 3px;color: #fff;text-align: center;">
+                                                                {{$bio['Estado']}}
+                                                        </span>
+                                                        @break
+                                                    @case("En Proceso")
+                                                        <span style="background: #F5B823;padding: 5px 4px 5px 3px;border-radius: 3px;color: #fff;text-align: center;">
+                                                                {{$bio['Estado']}}
+                                                        </span>
+                                                         @break
+                                                    @case("Revisión")
+                                                        <span style="background: #8C0CCB;padding: 5px 4px 5px 3px;border-radius: 3px;color: #fff;text-align: center;">
+                                                            {{$bio['Estado']}}
+                                                        </span>
+                                                         @break
+                                                    @case("Eliminado")
+                                                        <span style="background: #CB320C;padding: 5px 4px 5px 3px;border-radius: 3px;color: #fff;text-align: center;">
+                                                            {{$bio['Estado']}}
+                                                        </span>
+                                                         @break
+                                                    @case("Cancelado")
+                                                        <span style="background: #CB320C;padding: 5px 4px 5px 3px;border-radius: 3px;color: #fff;text-align: center;">
+                                                            {{$bio['Estado']}}
+                                                        </span>
+                                                         @break
+                                                    @case("Autorizado")
+                                                        <span style="background: #15EAEF;padding: 5px 4px 5px 3px;border-radius: 3px;color: #fff;text-align: center;">
+                                                            {{$bio['Estado']}}
+                                                        </span>
+                                                         @break
+                                                    @case("Facturando")
+                                                        <span style="background: #000;padding: 5px 4px 5px 3px;border-radius: 3px;color: #fff;text-align: center;">
+                                                            {{$bio['Estado']}}
+                                                        </span>
+                                                         @break
+                                                    @default
+                                                            {{-- Es el código que se ejecutará si no era ninguno de los estados anteriores. --}}
+                                                @endswitch 
+                                    {{-- @if($bio['Estado'] == 'Completado')
                                         <span class="text-success">{{$bio['Estado']}}</span>
                                     @else
                                         <span class="text-warning">{{$bio['Estado']}}</span>
-                                    @endif		
+                                    @endif		 --}}
                                 </td>
                             </tr>
                             <tr>
@@ -152,6 +191,8 @@
                             </tr>
                         </tbody></table>
                         <a class="btn btn-success" id="alert_demo_8" href="{{route('facturar.index')}}">Facturar</a>		
+                        <button type="button" class="btn btn-success" id="alert_demo_8">Enviar a Revisión</button>		
+                        <button type="button" class="btn btn-success" id="alert_demo_8">Imprimir</button>		
                         <button type="button" class="btn btn-success" id="alert_demo_8">Imprimir</button>		
                         <button type="button" class="btn btn-success" id="alert_demo_8">Editar</button>		
                     </div>
