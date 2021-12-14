@@ -110,10 +110,10 @@ Route::get('/facturar/asegurado',[FacturarController::class,'asegurado'])->name(
 
 // Reporte
 Route::get('/reporte/pagosarsexcel',[ReporteController::class,'reportePagoARSExcel'])->name('reporte.pagosarsexcel')->middleware('auth');
-Route::get('/reporte/pagosarsexcelform',[ReporteController::class,'reportePagoARSExcelForm'])->name('reporte.pagosarsexcel.form')->middleware('auth');;
-Route::post('/reporte/pagosimportexcelform',[ReporteController::class,'reportePagoARSExcelImport'])->name('reporte.pagosarsexcel.import')->middleware('auth');;
-Route::post('/reporte/reclamacionesEnviadas',[ReporteController::class,'reclamacionesEnviadasArsImport'])->name('reporte.reclamacionesEnviadas.import')->middleware('auth');;
-
+Route::get('/reporte/pagosarsexcelform',[ReporteController::class,'reportePagoARSExcelForm'])->name('reporte.pagosarsexcel.form')->middleware('auth');
+Route::post('/reporte/pagosimportexcelform',[ReporteController::class,'reportePagoARSExcelImport'])->name('reporte.pagosarsexcel.import')->middleware('auth');
+Route::post('/reporte/reclamacionesEnviadas',[ReporteController::class,'reclamacionesEnviadasArsImport'])->name('reporte.reclamacionesEnviadas.import')->middleware('auth');
+Route::get('/reporte/reclamacioneslista',[ReporteController::class,'reportePagoARSExcelLista'])->name('reporte.reclamacionesEnviadas.lista')->middleware('auth');
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('/dashboard');
 // })->name('dashboard');

@@ -44,12 +44,16 @@ class ReporteController extends Controller
             Excel::import(new Reporte_pago_Ars_import,$filears);
             
             DB::commit();//guardado con exito
-            return back()->with('message','Importacion con exito');
+            return back()->with('done','Importación con éxito');
         }
         catch(\Exception $e){
             DB::rollback();//no completar
             //throw $e;
-            return back()->with('message','Error al cargar archivo');
+            return back()->with('error','Error al cargar archivo');
         }
+    }
+    public function reportePagoARSExcelLista()
+    {
+        return view('reporte.pagoarsexcellista');
     }
 }

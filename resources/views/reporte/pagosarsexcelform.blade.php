@@ -34,16 +34,20 @@
                 <div class="card">
                         <div class="card-header">
                             <div class="card-title">Formulario Pagos ARS </div>
-                            @if (Session::has('message'))
-                                {{Session::get('message')}}                                                                    
-                             @endif
+                            @if (Session::has('done'))
+                            <div style="background: #03882b;padding: 5px 4px 5px 3px;border-radius: 3px;color: #fff;text-align: center;">
+                                {{Session::get('done')}}
+                            </div>
+                            @elseif(Session::has('error')) 
+                            <div style="background: #bd1018;padding: 5px 4px 5px 3px;border-radius: 3px;color: #fff;text-align: center;">
+                                {{Session::get('error')}}
+                            </div>                                                                                              
+                            @endif
                         </div>
-                        <div class="card-body">
+                        <div class="card-body">                            
                             <div class="row">
-                                <div class="col-md-6 col-lg-6">
-                                    {{-- edad y sexo --}}
-                                    
-                                    {{-- fin edad y sexo --}}
+                                <div class="col-md-6 col-lg-6"> 
+                                    {{--Reclamación Enviada a la ARS --}}
                                     <div class="form-group">
                                         <label for="password">Reclamación Enviada a la ARS</label>
                                         <div class="form-group">

@@ -30,12 +30,16 @@
                         <div class="card-desc">
                             Aqui podras agregar el listado de todos los pacientes
                             que la aseguradora aprobo sus casos
-                        </div>
-                        <a href="{{route('reporte.pagosarsexcel.form')}}">
+                        </div>                        
                         <div class="card-detail">
-                            <div class="btn btn-light btn-rounded">Agregar</div>
+                            <a href="{{route('reporte.pagosarsexcel.form')}}">
+                                <div style="margin: 2.5px;" class="btn btn-light btn-rounded">Agregar</div>
+                            </a>
+                            <a href="{{route('reporte.reclamacionesEnviadas.lista')}}">
+                                <div style="margin: 2.5px;" class="btn btn-light btn-rounded">Ver Lista</div>
+                            </a>
                         </div>
-                        </a>
+                                                
                     </div>
                 </div>
             </div>
