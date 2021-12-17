@@ -114,6 +114,7 @@ Route::get('/reporte/pagosarsexcelform',[ReporteController::class,'reportePagoAR
 Route::post('/reporte/pagosimportexcelform',[ReporteController::class,'reportePagoARSExcelImport'])->name('reporte.pagosarsexcel.import')->middleware('auth');
 Route::post('/reporte/reclamacionesEnviadas',[ReporteController::class,'reclamacionesEnviadasArsImport'])->name('reporte.reclamacionesEnviadas.import')->middleware('auth');
 Route::get('/reporte/reclamacioneslista',[ReporteController::class,'reportePagoARSExcelLista'])->name('reporte.reclamacionesEnviadas.lista')->middleware('auth');
+Route::post('/reporte/reclamacioneslistasearch',[ReporteController::class,'reportePagoARSExcelBuscarForm'])->name('reporte.reclamacionesEnviadas.buscador')->middleware('auth');
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('/dashboard');
 // })->name('dashboard');

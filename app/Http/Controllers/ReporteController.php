@@ -8,6 +8,7 @@ use App\Exports\PagosExport;
 use App\Imports\PagosImport;
 use App\Imports\ReclamacionesEnviadaArs;
 use App\Imports\Reporte_pago_Ars_import;
+use App\Models\vreportepagosarsaceptados;
 
 class ReporteController extends Controller
 {
@@ -37,6 +38,7 @@ class ReporteController extends Controller
         try
         {
             // agregando archivos excel
+            
             $filelabopaes = $request->file('filelabopaes');
             Excel::import(new ReclamacionesEnviadaArs,$filelabopaes);
             
@@ -44,16 +46,32 @@ class ReporteController extends Controller
             Excel::import(new Reporte_pago_Ars_import,$filears);
             
             DB::commit();//guardado con exito
-            return back()->with('done','Importación con éxito');
+            return back()->with('done','Importación con éxito ');
         }
         catch(\Exception $e){
             DB::rollback();//no completar
             //throw $e;
-            return back()->with('error','Error al cargar archivo');
+            return back()->with('error','Error al cargar archivo '.$e->getMessage());
+            
         }
     }
     public function reportePagoARSExcelLista()
     {
-        return view('reporte.pagoarsexcellista');
+        $texto ="";
+        $ExcelLista = vreportepagosarsaceptados::paginate(25);
+        return view('reporte.pagoarsexcellista',compact(['ExcelLista','texto']));
+        // return $ExcelLista;
+    }
+    public function reportePagoARSExcelBuscarForm(Request $reques)
+    {        
+        $texto =trim($reques->get("buscadorrpars"));
+        $ExcelLista = DB::table('vreporte_pagosars_aceptados')->select('ID_reclamacion_enviada_ars','Nombre','NO_AUTORIZACION','V_UNITARIO','Valor','diferencia')
+        ->where('Nombre','LIKE','%'.$texto.'%')
+        ->orWhere('NO_AUTORIZACION','LIKE','%'.$texto.'%')
+        ->paginate(10);        
+        return view('reporte.pagosarasexcelsearch',compact(['ExcelLista','texto']));
+        
+        //return response()->json($ExcelLista);
+
     }
 }
