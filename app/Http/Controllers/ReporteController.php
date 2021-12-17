@@ -59,7 +59,9 @@ class ReporteController extends Controller
     {
         $texto ="";
         $ExcelLista = vreportepagosarsaceptados::paginate(25);
-        return view('reporte.pagoarsexcellista',compact(['ExcelLista','texto']));
+        //para mostrar totales 
+        $ExcelListaTotales = vreportepagosarsaceptados::all();
+        return view('reporte.pagoarsexcellista',compact(['ExcelLista','texto','ExcelListaTotales']));
         // return $ExcelLista;
     }
     public function reportePagoARSExcelBuscarForm(Request $reques)

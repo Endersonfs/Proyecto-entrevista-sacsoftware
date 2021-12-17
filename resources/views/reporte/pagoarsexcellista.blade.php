@@ -50,10 +50,10 @@
                                                         <h4 class="card-title">
                                                             <?php
                                                             $a=0;
-                                                            foreach($ExcelLista as $listaars)
+                                                            foreach($ExcelListaTotales as $listaars)
                                                             {
                                                                 $a+=$listaars['V_UNITARIO'];                                                               
-                                                            }                                                            
+                                                            }                                                           
                                                             echo("RD$ ").$a;
                                                             ?>   
                                                         </h4>
@@ -78,7 +78,7 @@
                                                         <h4 class="card-title">
                                                             <?php
                                                             $a=0;
-                                                            foreach($ExcelLista as $listaars)
+                                                            foreach($ExcelListaTotales as $listaars)
                                                             {
                                                                 $a+=$listaars['Valor'];                                                               
                                                             }                                                            
@@ -106,7 +106,7 @@
                                                         <h4 class="card-title">
                                                             <?php
                                                             $a=0;
-                                                            foreach($ExcelLista as $listaars)
+                                                            foreach($ExcelListaTotales as $listaars)
                                                             {
                                                                 $a+=$listaars['diferencia'];                                                               
                                                             }                                                            
@@ -178,9 +178,9 @@
                                                     {{-- header --}}
                                                     <tr role="row">
                                                         <th rowspan="1" colspan="1">Nombre</th>
-                                                        <th rowspan="1" colspan="1">NO_AUTORIZACION</th>
-                                                        <th rowspan="1" colspan="1">Valor UNITARIO</th>
-                                                        <th rowspan="1" colspan="1">Valor</th>
+                                                        <th rowspan="1" colspan="1">NO. AUTORIZACION</th>
+                                                        <th rowspan="1" colspan="1">Valor Reclamación</th>
+                                                        <th rowspan="1" colspan="1">Valor Aseguradora</th>
                                                         <th rowspan="1" colspan="1">Diferencia</th>                                                        
                                                 </thead>                                            	
                                                 <tbody>
