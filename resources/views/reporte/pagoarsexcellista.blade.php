@@ -146,11 +146,12 @@
                                             <div class="col-sm-12 col-md-2">
                                                 <div class="dataTables_length" id="basic-datatables_length">                                                    
                                                         <div class="input-group-append show">
-                                                            <button class="btn btn-primary btn-border dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Descargar</button>
+                                                            <button class="btn btn-primary btn-border dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Opciones</button>
                                                             <div class="dropdown-menu show" x-placement="top-start" style="position: absolute; transform: translate3d(282px, -146px, 0px); top: 0px; left: 0px; will-change: transform;">
-                                                                <a class="dropdown-item" href="#">PDF</a>
-                                                                <a class="dropdown-item" href="#">Excel</a>
-                                                                <a class="dropdown-item" href="#">ARS</a>
+                                                                <a class="dropdown-item" href="#">Descargar PDF</a>
+                                                                <a class="dropdown-item" href="#">Descargar Excel</a>
+                                                                <a class="dropdown-item" href="{{route('reporte.reclamacionesEnviadas.cleandata')}}">Limpiar Datos</a>
+                                                                <a class="dropdown-item" href="#">Autorizar</a>
                                                                 {{-- <div role="separator" class="dropdown-divider"></div>
                                                                 <a class="dropdown-item" href="#">Separated link</a> --}}
                                                             </div>
@@ -189,8 +190,25 @@
                                                             <td class="sorting_1">{{ $listaars['Nombre'] }}</td>
                                                             <td>{{ $listaars['NO_AUTORIZACION'] }}</td>
                                                             <td>RD$ {{ $listaars['V_UNITARIO'] }}</td>
-                                                            <td>RD$ {{ $listaars['Valor'] }}</td>
-                                                            <td>RD$ {{ $listaars['diferencia'] }}</td>                                                           
+                                                            <td>RD$ {{ $listaars['Valor'] }}</td> 
+                                                            @if ($listaars['Valor']==null)
+                                                                <td style="background-color:rgb(228, 27, 20); color: #fff;">
+                                                                    ---{{ $listaars['diferencia'] }}
+                                                                </td>
+                                                            @elseif ($listaars['diferencia']==0)
+                                                                <td style="background-color:green; color: #fff;">
+                                                                    RD$ {{ $listaars['diferencia'] }}
+                                                                </td>
+                                                            @else
+                                                                <td style="background-color:rgb(228, 196, 20); color: #fff;">
+                                                                    @if ($listaars['diferencia']>0)
+                                                                        RD$ {{ $listaars['diferencia'] }}
+                                                                    @elseif ($listaars['diferencia'])
+                                                                        RD$ -{{ $listaars['diferencia'] }}
+                                                                    @endif
+                                                                </td>
+                                                            @endif
+                                                                                                                           
                                                         </tr>
                                                     @endforeach
                                                 </tbody>

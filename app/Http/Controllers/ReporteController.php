@@ -9,6 +9,10 @@ use App\Imports\PagosImport;
 use App\Imports\ReclamacionesEnviadaArs;
 use App\Imports\Reporte_pago_Ars_import;
 use App\Models\vreportepagosarsaceptados;
+use App\Models\CleanDataReporteARS;
+use App\Models\CleanDataReporteReclamaciones;
+
+
 
 class ReporteController extends Controller
 {
@@ -51,8 +55,7 @@ class ReporteController extends Controller
         catch(\Exception $e){
             DB::rollback();//no completar
             //throw $e;
-            return back()->with('error','Error al cargar archivo '.$e->getMessage());
-            
+            return back()->with('error','Error al cargar archivo '.$e->getMessage());            
         }
     }
     public function reportePagoARSExcelLista()
@@ -71,9 +74,28 @@ class ReporteController extends Controller
         ->where('Nombre','LIKE','%'.$texto.'%')
         ->orWhere('NO_AUTORIZACION','LIKE','%'.$texto.'%')
         ->paginate(10);        
-        return view('reporte.pagosarasexcelsearch',compact(['ExcelLista','texto']));
-        
+        return view('reporte.pagosarasexcelsearch',compact(['ExcelLista','texto']));        
         //return response()->json($ExcelLista);
 
+    }
+    public function reportePagoARSExcelLimpiardata()
+    {     
+        try
+        {
+            
+            // Eliminando datos de tablas reclamaciones
+            CleanDataReporteReclamaciones::truncate();
+                
+            // Eliminando datos de tablas reclamaciones
+            CleanDataReporteARS::truncate();  
+            
+            DB::commit();//guardado con exito
+            return back()->with('done','Importación con éxito ');
+        }
+        catch(\Exception $e){
+            DB::rollback();//no completar
+            //throw $e;
+            return back()->with('error','Error al cargar archivo '.$e->getMessage());            
+        }
     }
 }
